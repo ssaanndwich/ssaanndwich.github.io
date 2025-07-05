@@ -2,7 +2,7 @@
 Coming soon...
 
 ## Design & Development Notes
-  
+July 4, 2025: Added content and video assets to Project panes on index. Tested svg code vs. Figma exports
 July 3, 2025: Cleaned up conflicts between panes css, main css, index html. Fixed pane js transitions. Set up local testing server  
 July 2, 2025: Added panes css, js. Set up Project panes on index, designed and tweaked interactions  
 July 1, 2025: Aligned divs and sized grids, layout on index  

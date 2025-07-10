@@ -2,6 +2,7 @@
 Coming soon...
 
 ## Design & Development Notes
+July 10, 2025: Adjusted color, spacing, and other styles for responsiveness across select browsers. Added socials. Designed Notes template. Created and linked Notes pages. Migrating Notes.
 July 9, 2025: Adjusted divs, spans, and their css for projects-grid emoji and link alignment in mobile viewport widths. Made a chonkload of typography updates for scannability, legibility, style points, and comprehensive responsive behavior. Added margin lines in Notes section.  
 July 8, 2025: Changed Art > Founts. Added panes.css variables for projects-grid columns and refactored corresponding html. Added and styled Notes section. Adjusted hover state for svg-filter feTurbulence effect. Adjusted welcome-heading and projects grids styles and refactored index html for responsiveness. Fixed Nav and Footer styles in light and dark modes. Edited and added portrait image  
 July 7, 2025: Added 2nd project pane and fixed its sliding functionality. Adjusted content alignment with panes, main css and html  

@@ -2,6 +2,7 @@
 Coming soon...
 
 ## Design & Development Notes
+July 15, 2025: Scrapped Javascript approach in place of css for scrolly interaction. Vehemently shook fists at the world upon this realization and fixed layout issues. Merged scrolly fixes with responsive fixes on index html. Considered easter egg concept. Updated FigJam  
 July 14, 2025: Diagrammed scrolly Javascript code variations. Troubleshooting scrolling and responsive issues   
 July 11, 2025: Researched note feed and content workflow strategies. Updated file architecture in FigJam and task priorities. Updated footer links. Created Founts html with banner skeleton and found browser redirect bug.  
 July 10, 2025: Adjusted color, spacing, and other styles for responsiveness across select browsers. Added socials. Designed Notes template. Created and linked Notes pages. Migrating Notes.  

@@ -2,6 +2,7 @@
 Coming soon...
 
 ## Design & Development Notes
+July 14, 2025: Diagrammed scrolly Javascript code variations. Troubleshooting scrolling and responsive issues   
 July 11, 2025: Researched note feed and content workflow strategies. Updated file architecture in FigJam and task priorities. Updated footer links. Created Founts html with banner skeleton and found browser redirect bug.  
 July 10, 2025: Adjusted color, spacing, and other styles for responsiveness across select browsers. Added socials. Designed Notes template. Created and linked Notes pages. Migrating Notes.  
 July 9, 2025: Adjusted divs, spans, and their css for projects-grid emoji and link alignment in mobile viewport widths. Made a chonkload of typography updates for scannability, legibility, style points, and comprehensive responsive behavior. Added margin lines in Notes section.  

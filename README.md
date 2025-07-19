@@ -2,6 +2,7 @@
 Coming soon...
 
 ## Design & Development Notes
+July 18, 2025: Delineated between fount-gallery and founts-gallery classes to deconstruct into separate gallery IDs. Finished adding and formatting Founts gallery content. Sussed out javascript iframe embed and styling. Cleaned up more html files.    
 July 17, 2025: Rerouted select links to Figma slides, Youtube, or other websites. Deleted unused javascript and html. Created and inserted favicon assets and html. Finished migrating Notes, adding pane background videos. Added Founts content. Cleaned and reorganized files. Rescoped MVP.  
 July 16, 2025: Added tabindices to index links and buttons. Built Projects page skeleton. Adjusted padding and alignment issues.  
 July 15, 2025: Scrapped javascript approach in place of css for scrolly interaction. Vehemently shook fists at the world upon this realization and fixed layout issues. Merged scrolly fixes with responsive fixes on index html. Considered easter egg concept. Updated FigJam  

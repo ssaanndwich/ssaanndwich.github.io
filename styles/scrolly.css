@@ -1,0 +1,332 @@
+/* Scrollytelling and Founts-specific styles */
+@layer base {
+    :root {
+        /* Jumbotron Columns */
+        --jumbotron-founts: 1fr 2fr;
+
+        /* Founts */
+        --founts-trio: 1fr 1fr 1fr;
+        --founts-duo: 1.5fr 1.5fr;
+        --article-grid-1: .5fr 2fr;
+        --article-grid-2: 1fr;
+    }
+}
+
+@layer components {
+    /* Founts specific styles (leveraging existing classes) */
+    .founts-duo-row {
+        display: grid;
+        grid-template-columns: var(--founts-duo);
+        gap: var(--gap-1);
+        margin-bottom: var(--gap-1);
+    }
+
+    .founts-solo-row {
+        display: flex;
+        margin-bottom: var(--gap-1);
+        justify-content: center;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .founts-solo-row img, .founts-solo-row video {
+        max-width: 100%;
+        min-width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: .5em;
+    }
+
+    .founts-duo-row>img, .founts-duo-row>video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: .5em;
+    }
+
+    /* Video container that mirrors scrolly article grid */
+    .video-container {
+        display: grid;
+        grid-template-columns: var(--article-grid-1); /* .5fr 2fr */
+        gap: var(--gap-1);
+        margin-bottom: 2rem;
+    }
+
+    .video-container video#founts-jumbotron-video {
+        grid-column: 1 / -1; /* Span full width across both columns */
+    }
+
+    /* Founts Scrollytelling Styles */
+    .founts-step {
+        margin-bottom: 4rem;
+        position: relative;
+        min-height: 0vh;
+    }
+
+    .founts-sticky {
+        position: sticky;
+        top: 2rem;
+        z-index: 20;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+        padding: 1.5rem 1rem;
+        border-radius: 0.5rem;
+        min-height: 0vh;
+        max-height: 70vh;
+        height: fit-content;
+        width: 100%;
+        margin-bottom: 2rem;
+        height: fit-content; /* Ensure it only takes the height it needs */
+        align-self: flex-start; /* Prevent it from stretching to full height */
+    }
+
+    .founts-sticky.is-active {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .light .founts-sticky {
+        background: var(--color-powder);
+    }
+
+    .founts-sticky h2 {
+        margin: 0;
+        font-size: var(--size-xl);
+        font-weight: 300;
+        color: var(--color-white);
+    }
+
+    .light .founts-sticky h2 {
+        color: var(--color-steel);
+    }
+
+    .speakerdeck-iframe {
+        border: 0px;
+        background: rgba(0, 0, 0, 0.1) padding-box;
+        margin: 0px;
+        padding: 0px;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 40px;
+        width: 807px;
+        height: 451px;
+    }
+}
+
+@layer utilities {
+    .jumbotron-founts {
+        grid-template-columns: var(--jumbotron-founts);
+        margin: -23em auto 20em auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 24rem;
+        text-align: center;
+    }
+
+    video#founts-jumbotron-video {
+        width: 100%;
+        height: 35em;
+        object-fit: cover;
+        object-position: 50% 10%;
+        border-radius: 1rem;
+        z-index: -10;
+    }
+
+    .founts-trio-row {
+        display: grid;
+        grid-template-columns: var(--founts-trio);
+        gap: var(--gap-1);
+        margin-bottom: var(--gap-1);
+    }
+
+    .founts-trio-row img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+    }
+
+    article {
+        grid-template-columns: var(--article-grid-1);
+        display: grid;
+        margin-bottom: 10rem;
+        position: relative; /* Add positioning context for absolute positioning */
+    }
+}
+
+@media (max-width: 629px) {
+    article {
+        grid-template-columns: 1fr;
+        display: block;
+        margin-bottom: 10rem;
+        position: relative; /* Add positioning context for absolute positioning */
+    }
+
+    .video-container {
+        display: block;
+    }
+}
+
+/* Mobile breakpoint - Only disable sticky on small screens */
+@media (min-width: 630px) and (max-width: 768px) {
+    /* Founts trio row for mobile */
+    article {
+        grid-template-columns: var(--article-grid-2);
+        display: grid;
+        margin-bottom: 10rem;
+        position: relative; /* Add positioning context for absolute positioning */
+    }
+
+    .video-container {
+        grid-template-columns: var(--article-grid-2); /* 1fr */
+    }
+
+    .founts-duo-row > img, .founts-duo-row > video {
+        border-radius: .5em;
+    }
+
+    .founts-trio-row {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--gap-1);
+        margin-top: 0;
+    }
+
+    /* Founts Scrollytelling - Mobile (DISABLE STICKY) */
+    .founts-step {
+        min-height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .founts-sticky {
+        position: static !important; /* Force static on mobile */
+        background: transparent;
+        padding: 0 0;
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+
+    .light .founts-sticky {
+        background: transparent;
+    }
+
+    .founts-sticky h2 {
+        font-size: var(--size-lg);
+        margin-bottom: 1rem;
+    }
+
+    .footer nav>ul {
+        gap: var(--size-xxs);
+        flex-wrap: wrap;
+    }
+}
+
+/* Tablet breakpoint - Keep sticky behavior and two-column layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+    article {
+        grid-template-columns: var(--article-grid-1);
+        display: grid;
+        margin-bottom: 10rem;
+        position: relative; /* Add positioning context for absolute positioning */
+    }
+
+    .jumbotron-founts {
+        grid-template-columns: var(--jumbotron-founts);
+    }
+
+    .founts-trio-row {
+        grid-template-columns: var(--founts-trio);
+        gap: var(--gap-1);
+        flex-direction: row;
+    }
+
+    .founts-trio-row img, .founts-trio-row video {
+        height: 200px;
+    }
+
+    .founts-duo-row {
+        grid-template-columns: var(--founts-duo);
+        display: grid;
+    }
+
+    /* Founts Scrollytelling */
+    .founts-step {
+        min-height: 80vh;
+        margin-bottom: 4rem;
+    }
+
+    .founts-sticky {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -o-sticky;
+        position: sticky; /* Keep sticky positioning */
+        top: 2rem; /* Stick to top */
+        z-index: 20; /* Ensure it stays above content */
+        transition: transform 0.6s ease, opacity 0.6s ease;
+        padding: 1.5rem 0;
+        border-radius: 0.5rem;
+        height: fit-content; /* Ensure it only takes the height it needs */
+        align-self: flex-start; /* Prevent it from stretching to full height */
+    }
+
+    .light .founts-sticky {
+        background: var(--color-powder);
+    }
+
+    @supports (position: sticky) {
+        .founts-sticky, .light .founts-sticky {
+            position: sticky;
+        }
+    }
+    
+    .gallery-1, .gallery-2 {
+        position: relative;
+        z-index: 0;
+        padding-top: 2rem;
+    }
+
+    .gallery-2 .founts-trio-row img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+    
+/* Large screen optimization */
+@media (min-width: 1025px) {
+    article {
+        grid-template-columns: var(--article-grid-1);
+        display: grid;
+        margin-bottom: 10rem;
+        position: relative;
+    }
+
+    .fount-title {
+        position: sticky;
+    }
+
+    .founts-step {
+        min-height: 90vh;
+        margin-bottom: 6rem;
+    }
+
+    .founts-sticky {
+        position: sticky;
+        top: 2rem;
+        padding: 0;
+        height: fit-content; /* Ensure it only takes the height it needs */
+        align-self: flex-start;
+    }
+
+    .light .founts-sticky {
+        background: var(--color-powder);
+    }
+
+    .gallery-2 .founts-trio-row img {
+        height: 100%;
+    }
+
+    .founts-trio-row {
+        grid-template-columns: var(--founts-trio);
+        gap: var(--gap-1);
+    }
+
+    .founts-trio-row img {
+        height: 200px;
+    }
+}

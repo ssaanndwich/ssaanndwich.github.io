@@ -1,0 +1,1033 @@
+:root {
+    --color-sheet: #252525;
+    --color-link: #aa86f5;
+    --color-accent: #aa86f5;
+    --color-text: #e4e4e4;
+
+    --color-white: #fff;
+    --color-ash: #cbccc4;
+    --color-iron: #373737;
+    --color-black: #181818;
+    --color-purple: #aa86f5;
+    --color-mint: #109b6c;
+    --color-yellow: #FFBF71;
+    --color-sky: #43A5DD;
+
+    --focus-outline: 3px solid #aa86f5;
+    --font-family-heading: 'Inter', sans-serif;
+    --font-family-body: 'Inter', sans-serif;
+    --font-spacing-lg: -.02em;
+
+    --size-base: 1.6rem;
+    --size-scale: 1.2;
+    --size-xxs: calc(var(--size-xs)/var(--size-scale));
+    --size-xs: calc(var(--size-sm)/var(--size-scale));
+    --size-sm: calc(var(--size-md)/var(--size-scale));
+    --size-md: var(--size-base);
+    --size-lg: calc(var(--size-md)*var(--size-scale));
+    --size-xl: calc(var(--size-lg)*var(--size-scale));
+    --size-xxl: calc(var(--size-xl)*var(--size-scale));
+    
+    
+    --gap-1: 1rem;
+    --gap-2: 2rem;
+
+    /* Columns */
+    --jumbotron-default: 1.5fr 1fr;
+    --jumbotron-biggun: 2.5fr 1fr;
+    --header-columns: 1fr 2fr 1fr;
+
+    /* Toggle */
+    --color-midnight: #251d29;
+    --color-powder: #e4e4e4;
+    --color-steel: #262626;
+
+    --toggleHeight: 16em;
+    --toggleWidth: 30em;
+    --toggleBtnRadius: 10em;
+  
+    --color-night: #423966;
+    --color-moon: #D9FBFF;
+}
+
+@layer reset {
+    /* Global Reset/Normalization */
+    * {
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* SVG Filter Definitions */
+    .svg-filters-1 {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    .svg-filters-2 {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    .texture {
+        z-index: 0;
+        background-image: url(../imgs/dark_spotted.avif);
+        background-repeat: repeat;
+        background-position: left top;
+        background-size: 47px auto;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.7;
+        position: fixed;
+        mix-blend-mode: overlay;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+
+    /* Skip link for keyboard users */
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        color: var(--color-text);
+        padding: 8px;
+        z-index: 100;
+        transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+        top: 0;
+    }
+
+    /* Focus styles */
+    :focus {
+        outline: var(--focus-outline);
+        outline-offset: 2px;
+    }
+
+    /* Remove focus outline for mouse users */
+    :focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: var(--size-xxl);
+        line-height: 1;
+        letter-spacing: -.03em;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: var(--size-lg);
+        font-weight: 300;
+        letter-spacing: -.02em;
+    }
+
+    .light h2#projects-heading-1, h2#projects-heading-1, .light h2#projects-heading-2, h2#projects-heading-2, .light h2#notes-heading, h2#notes-heading {
+        margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+        font-size: var(--size-md);
+        font-weight: normal;
+        line-height: 1;
+    }
+
+    .light .lines li h3 {
+        color: var(--color-steel);
+        text-decoration-color: var(--color-steel);
+        line-height: 1.3;
+    }
+
+    .lines li h3 {
+        margin-bottom: 0;
+        margin-top: 0;
+        line-height: 1.3;
+    }
+
+    .jumbotron h4 {
+        color: var(--color-ash);
+        font-size: var(--size-xs);
+        font-weight: 350;
+        line-height: 1.3;
+    }
+
+    .light .jumbotron h4 {
+        color: var(--color-steel);
+    }
+
+    #jumbotron-founts {
+        color: var(--color-white);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-family-heading);
+        margin: 0 0 1rem 0;
+        line-height: 1.3;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-family: var(--font-family-body);
+    }
+
+    .light footer nav>ul li span {
+        color: var(--color-steel);
+    }
+
+    /* Links */
+
+    .light a, .light a:visited {
+        color: var(--color-steel) !important;
+    }
+
+    .light a:active {
+        text-decoration: underline;
+        text-decoration-thickness: 0.1em;
+        text-underline-offset: 0.1em;
+    }
+
+    a, a:visited {
+        color: var(--color-purple);
+        text-decoration: underline;
+        text-decoration-thickness: 0.1em;
+        text-underline-offset: 0.1em;
+    }
+
+    a:hover {
+        filter: url(#turbulence-filter);
+        transition: filter 0.3s ease;
+    }
+}
+
+
+/* Base Styles: Elements, Layout Primitives */
+@layer base {
+      
+    body {
+        color: var(--color-white);
+        transition: all .2s ease-in-out;
+        background: var(--color-midnight);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+    }
+
+    /* Text Selection - Separated for cross-browser compatibility */
+    ::-moz-selection {
+        background-color: var(--color-mint);
+        color: var(--color-white);
+    }
+
+    ::selection {
+        background-color: var(--color-mint);
+        color: var(--color-white);
+    }
+
+    .light ::-moz-selection {
+        background-color: var(--color-sky);
+        color: var(--color-white);
+    }
+
+    .light ::selection {
+        background-color: var(--color-sky);
+        color: var(--color-white);
+    }
+
+    .light {
+        background: var(--color-powder);
+        color: var(--color-steel);
+    }
+
+    .toggl {
+        font-size: 20%;
+        margin-top: 19em;
+        position: relative;
+        height: var(--toggleHeight);
+        width: var(--toggleWidth);
+        border-radius: var(--toggleHeight);
+        transition: all 500ms ease-in-out;
+        background: var(--color-night);
+    }
+
+    .day {
+        background: var(--color-yellow);
+    }
+
+    .moon {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        transition: all 400ms ease-in-out;
+        
+        top: 3em;
+        left: 3em;
+        transform: rotate(-75deg);
+        width: var(--toggleBtnRadius);
+        height: var(--toggleBtnRadius);
+        background: var(--color-night);
+        box-shadow: 
+          3em 2.5em 0 0em var(--color-moon) inset,
+          rgba(255, 255, 255, 0.1) 0em -7em 0 -4.5em,
+          rgba(255, 255, 255, 0.1) 3em 7em 0 -4.5em,
+          rgba(255, 255, 255, 0.1) 2em 13em 0 -4em,
+          rgba(255, 255, 255, 0.1) 6em 2em 0 -4.1em,
+          rgba(255, 255, 255, 0.1) 8em 8em 0 -4.5em,
+          rgba(255, 255, 255, 0.1) 6em 13em 0 -4.5em,
+          rgba(255, 255, 255, 0.1) -4em 7em 0 -4.5em,
+          rgba(255, 255, 255, 0.1) -1em 10em 0 -4.5em;
+    }
+
+    .sun {
+        top: 4.5em;
+        left: 18em;
+        transform: rotate(0deg);
+        width: 7em;
+        height: 7em;
+        background: var(--color-white);
+        box-shadow: 3em 3em 0 5em var(--color-white) inset,
+          0 -5em 0 -2.7em var(--color-white),
+          3.5em -3.5em 0 -3em var(--color-white),
+          5em 0 0 -2.7em var(--color-white),
+          3.5em 3.5em 0 -3em var(--color-white),
+          0 5em 0 -2.7em var(--color-white),
+          -3.5em 3.5em 0 -3em var(--color-white),
+          -5em 0 0 -2.7em var(--color-white),
+          -3.5em -3.5em 0 -3em var(--color-white);
+    }
+
+    /* Navigation */
+    nav {
+        padding-block: var(--size-md);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: relative;
+    }
+
+    nav>ul {
+        padding-inline: var(--size-sm);
+        align-items: center;
+        gap: var(--size-sm);
+        border-radius: var(--size-lg);
+        margin-inline-start:calc(var(--size-sm)*-2);
+        display: flex;
+        list-style-type: none;
+    }
+
+    nav>ul li {
+        -webkit-transform-style: flat;
+        transform-style: flat;
+        font-size: var(--size-xs);
+    }
+
+    nav>ul a {
+        color: var(--color-purple);
+        padding-block: var(--size-xs);
+        padding-inline: var(--size-sm);
+        line-height: 1;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    /* Notes */
+    .lines {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lines li {
+        position: relative;
+        margin-bottom: 1.7rem;
+        line-height: 1.5;
+    }
+
+    .lines li::before {
+        content: "";
+        position: absolute;
+        left: calc(-4 * var(--viewport-offset, 2rem));
+        top: 0.9rem;
+        width: 7rem;
+        height: 0.1rem;
+        background-color: var(--color-ash);
+        display: block;
+    }
+
+    .light .lines li::before {
+        background-color: var(--color-steel);
+    }
+
+    @media (hover) and (pointer: fine) {
+        nav>ul a:hover {
+            --font-weight: 800;
+            filter: url(#turbulence-filter);
+            transition: filter 0.3s ease;
+        }
+    }
+}
+
+/* Components: Cards, Butttons, Dialogs */
+@layer components {
+    /* Name with SVG filter */
+    #name-logo {
+        filter: url(#name-filter);
+        width: auto;
+        height: auto;
+        min-width: 70%;
+        max-width: 80%;
+        transition: filter 0.3s ease-in-out;
+    }
+
+    /* Change name color in light mode */
+    .light #name-logo {
+        filter: url(#name-filter) brightness(0.1);
+    }
+
+    .button {
+        margin-top: 6rem;
+        padding: 1.5rem 3rem;
+        border-radius: 3em;
+        font-size: var(--size-xs);
+        font-family: var(--font-family-heading);
+        font-weight: 500;
+        color: var(--color-moon);
+        background-color: var(--color-night);
+    }
+
+    .button:hover {
+        cursor: pointer;
+    }
+
+}
+
+/* Utilities: Spacing like Margin and Padding, Typography */
+@layer utilities {
+    /* Layout */
+    .header-grid {
+        display: grid;
+        grid-template-columns: var(--header-columns);
+        column-gap: min(5vw,5rem);
+    }
+
+    header {
+        color: var(--color-white);
+        padding: 1rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    main, header, footer, .note-content {
+        min-width: 35em;
+        max-width: 60em;
+        margin: 0 auto;
+    }
+
+    /* .note-content {
+        max-width: 60vw;
+        margin: 0 auto;
+    } */
+
+    .experience-heading {
+        margin-top: 1rem;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap-2);
+    }
+
+    .flex-container > div:first-chicken {
+        flex: 2;
+    }
+
+    .flex-container > div:last-chicken {
+        flex: 2;
+    }
+
+    .jumbotron {
+        display: grid;
+        grid-template-columns: var(--jumbotron-default);
+        margin: auto;
+        width: 100%;
+    }
+
+    .jumbotron img {
+        margin-bottom: 1rem;
+    }
+
+    .jumbotron .bio-logo {
+        filter: invert(.8);
+    }
+
+    .jumbotron .bio-logo, .light .jumbotron .bio-logo {
+        width: 4rem;
+        max-height: 3rem;
+    }
+
+    .light .bio-logo {
+        filter: invert(0.2);
+    }
+
+    .left {
+        position: relative;
+    }
+
+    .jumbotron .right {
+        min-width: 10em;
+        justify-content: start;
+        overflow: auto;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .flex-direction {
+        flex-direction: column !important;
+    }   
+
+    /* Left-align bio logos with consistent spacing */
+    .right div:has(.bio-logo) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .6rem;
+        margin-top: 1rem;
+        flex-flow: row wrap
+    }
+
+    .note-content section p img {
+        max-width: 100%;
+    }
+
+    .note-content section sub {
+        max-width: 50vw;
+        display: inline-block;
+    }
+
+    section {
+        margin-bottom: 6rem;
+    }
+
+    /* Table styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+    }
+
+    th, td {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid var(--color-ash);
+    }
+
+    .light th, .light td {
+        border-bottom: 1px solid var(--color-steel);
+    }
+
+    th {
+        font-weight: 600;
+        background-color: rgba(170, 134, 245, 0.1);
+    }
+
+    .light th {
+        background-color: rgba(67, 165, 221, 0.1);
+    }
+
+    tr:hover {
+        background-color: rgba(170, 134, 245, 0.05);
+    }
+
+    .light tr:hover {
+        background-color: rgba(67, 165, 221, 0.05);
+    }
+
+    /* Horizontal scrollable table container */
+    .table-scroll-container {
+        overflow-x: auto;
+        overflow-y: visible;
+        width: 100%;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
+        /* Add subtle scrollbar styling */
+    }
+
+    .table-scroll-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .table-scroll-container::-webkit-scrollbar-track {
+        background: rgba(170, 134, 245, 0.1);
+        border-radius: 4px;
+    }
+
+    .table-scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(170, 134, 245, 0.3);
+        border-radius: 4px;
+    }
+
+    .table-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(170, 134, 245, 0.5);
+    }
+
+    .light .table-scroll-container::-webkit-scrollbar-track {
+        background: rgba(67, 165, 221, 0.1);
+    }
+
+    .light .table-scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(67, 165, 221, 0.3);
+    }
+
+    .light .table-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(67, 165, 221, 0.5);
+    }
+
+    /* Ensure table inside scroll container maintains proper sizing */
+    .table-scroll-container table {
+        min-width: max-content;
+        margin: 0;
+    }
+
+    footer {
+        color: var(--color-text);
+        padding: 1rem 0rem;
+        text-align: center;
+    }
+
+    footer nav>ul li {
+        color: var(--color-white);
+        padding-inline-start: var(--size-sm);
+        width: max-content;
+    }
+
+    /* Responsive Images */
+    .note-content img, 
+    .note-content picture img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .light .note-content img,
+    .light .note-content picture img {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .note-content img:hover,
+    .note-content picture img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .light .note-content img:hover,
+    .light .note-content picture img:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Responsive image sizing based on viewport */
+    @media (max-width: 479px) {
+        .note-content img,
+        .note-content picture img {
+            max-width: 100%;
+            margin: 1rem 0;
+        }
+    }
+
+    @media (min-width: 480px) and (max-width: 768px) {
+        .note-content img,
+        .note-content picture img {
+            max-width: 90%;
+            margin: 1.5rem auto;
+            display: block;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .note-content img,
+        .note-content picture img {
+            max-width: 85%;
+            margin: 2rem auto;
+            display: block;
+        }
+    }
+}
+
+/* Media Queries (These can exist within any layer) */
+@layer media {
+    @media (max-width: 479px) {
+
+        nav>ul {
+            flex-direction: column;
+            padding-left: 0;
+        }
+        
+        main, header, footer, .note-content {
+            max-width: 25em;
+            margin: 0 auto;
+        }
+
+        /* .note-content {
+            max-width: 60vw;
+            margin: 0 auto;
+        } */
+        
+        .jumbotron {
+            flex-flow: row wrap;
+            display: flex;
+            gap: var(--gap-2);
+        }
+
+        .jumbotron .experience-heading {
+            margin-bottom: 0;
+        }
+
+        .jumbotron-founts {
+            grid-template-columns: var(--jumbotron-founts);
+            margin-bottom: 11em;
+        }
+    }
+
+    @media (min-width: 480px) and (max-width: 637px) {
+        main, header, footer, .note-content {
+            max-width: 30em;
+            margin: 0 auto;
+        }
+
+        /* .note-content {
+            max-width: 60vw;
+            margin: 0 auto;
+        } */
+        
+        #header-spacer {
+            display: none;
+        }
+        
+        .jumbotron {
+            display: block;
+            margin: auto;
+            width: 100%;
+        }
+        
+        .experience-heading {
+            margin-bottom: 0rem;
+        }
+
+        .experience-heading .flex-container {
+            gap: 4rem;
+        }
+    }
+
+    /* Mobile breakpoint - Only disable sticky on small screens */
+    @media (min-width: 638px) and (max-width: 768px) {
+
+        /* Toggle button adjustments for mobile */
+        .toggl {
+            font-size: 15%;
+            margin-top: 21em;
+            /* flex-shrink: 0; Prevent toggle from shrinking */
+        }
+
+        nav>ul {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: var(--size-xs);
+        }
+
+        .experience-heading {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Header becomes flexbox on mobile */
+        .header-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+        }
+        
+        .header-grid > div:nth-chicken(2) {
+            display: none; /* Hide the empty middle div */
+        }
+        
+        .header-grid > div:last-chicken {
+            display: flex;
+            justify-content: flex-end;
+            min-width: 120px; /* Ensure minimum space for toggle */
+        }
+        
+        /* Ensure header has proper spacing */
+        header {
+            padding: 1rem;
+            position: relative;
+        }
+
+        main, header, footer, .note-content {
+            max-width: 40em;
+            margin: 0 auto;
+        }
+
+        /* .note-content {
+            max-width: 60vw;
+            margin: 0 auto;
+        } */
+        
+        /* Jumbotron becomes single column */
+        .jumbotron {
+            grid-template-columns: 1fr;
+            gap: var(--gap-2);
+        }
+        
+        /* Flex containers become vertical */
+        /* .flex-container {
+            flex-direction: column;
+            display: flex;
+            gap: var(--gap);
+        } */
+        
+        .flex-container > div:first-chicken,
+        .flex-container > div:last-chicken {
+            flex: 1;
+        }
+        
+        /* Adjust main content width for mobile */
+        main, header, footer {
+            max-width: 95vw;
+            padding: 1rem;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: var(--size-xl);
+        }
+        
+        h2 {
+            font-size: var(--size-md);
+            line-height: 1.3;
+        }
+        
+        /* Adjust portrait image size */
+        .jumbotron img#name-logo {
+            min-width: 55vw;
+            max-width: 75vw;
+        }
+
+        .jumbotron img#portrait {
+            width: 10em;
+        }
+
+        /* Left-align bio logos */
+        .right div:has(.bio-logo) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        /* Section spacing */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        /* Lines for Notes */
+        .lines li {
+            position: relative;
+            margin-bottom: 1.7rem;
+            line-height: 1.5;
+        }
+
+        .lines {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lines li::before {
+            content: "";
+            position: absolute;
+            left: calc(-1.5 * var(--viewport-offset, 2rem));
+            top: 0.9rem;
+            width: 2.5rem;
+            height: 0.1rem;
+            background-color: var(--color-ash);
+            display: block;
+        }
+
+        .light .lines li::before {
+            background-color: var(--color-steel);
+        }
+    }
+
+    /* Tablet breakpoint - Keep sticky behavior and two-column layout */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        main, header, footer {
+            max-width: 90vw;
+        }
+        
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+
+        header {
+            max-width: 40em;
+            margin-bottom: 5rem;
+        }
+
+        main, footer, .note-content {
+            max-width: 40em;
+            margin: 0 auto;
+        }
+
+        /* .note-content {
+            max-width: 60vw;
+            margin: 0 auto;
+        } */
+
+        .jumbotron {
+            grid-template-columns: var(--jumbotron-default);
+        }
+
+        .jumbotron h2 {
+            line-height: 1.3;
+        }
+
+        .bio-logo {
+            width: 3rem;
+            filter: invert(.8);
+        }
+
+        .light .bio-logo {
+            filter: invert(.2);
+        }
+
+        /* Lines for Notes */
+        .lines li {
+            position: relative;
+            margin-bottom: 1.7rem;
+            line-height: 1.5;
+        }
+
+        .lines {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lines li::before {
+            content: "";
+            position: absolute;
+            left: calc(-2.5 * var(--viewport-offset, 2rem));
+            top: 0.9rem;
+            width: 3.5rem;
+            height: 0.1rem;
+            background-color: var(--color-ash);
+            display: block;
+        }
+
+        .light .lines li::before {
+            background-color: var(--color-steel);
+        }
+    }
+        
+    /* Large screen optimization */
+    @media (min-width: 1025px) and (max-width: 1199px) {
+        body {
+            max-width: 75vw;
+            margin: 0 auto;
+        }
+
+        header {
+            max-width: 50em;
+            margin-bottom: 6rem;
+        }
+
+        main, footer, .note-content {
+            max-width: 50em;
+            margin: 0 auto;
+        }
+
+        .jumbotron h2 {
+            line-height: 1.3;
+        }
+
+        .bio-logo {
+            width: 3rem;
+            filter: invert(.8);
+        }
+
+        .light .bio-logo {
+            filter: invert(.2);
+        }
+
+        /* Left-align bio logos */
+        .right div:has(.bio-logo) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Lines for Notes */
+        .lines li {
+            position: relative;
+            margin-bottom: 1.7rem;
+            line-height: 1.5;
+        }
+
+        .lines {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lines li::before {
+            content: "";
+            position: absolute;
+            left: calc(-6 * var(--viewport-offset, 2rem));
+            top: 0.9rem;
+            width: 10rem;
+            height: 0.1rem;
+            background-color: var(--color-ash);
+            display: block;
+        }
+
+        .light .lines li::before {
+            background-color: var(--color-steel);
+        }
+    }
+
+
+    @media (min-width: 1200px) {
+        header {
+            max-width: 65em;
+            margin-bottom: 6rem;
+        }
+
+        main, footer, .note-content {
+            max-width: 65em;
+            margin: 0 auto;
+        }
+
+        /* .note-content {
+            max-width: 60vw;
+            margin: 0 auto;
+        } */
+
+        .jumbotron {
+            grid-template-columns: var(--jumbotron-biggun);
+        }
+
+        .jumbotron .left {
+            min-width: 40vw;
+            max-width: 50vw;
+        }
+    }
+}

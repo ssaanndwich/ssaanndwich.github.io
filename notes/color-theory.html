@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHHWMLZMXM" type="text/javascript"></script>
+    <!-- Preload Responsive Images -->
+    <link rel="preload" as="image" href="assets1/color-theory/wavelengths-480.webp" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="assets1/color-theory/wavelengths-1172.webp" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="assets1/color-theory/rgbw-cmyk-480.webp" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="assets1/color-theory/rgbw-cmyk-1172.webp" media="(min-width: 769px)">
+    <!-- Meta and Social -->
+    <title>Notes / San Cheng</title>
+    <meta name="description" content="Technical Product UX Designer with 9 years of experience in corporate, agency, startup teams. >5.5
+    years leading and collaborating with design, cross-functional leads. Creative, pragmatic, agile,
+    experimental superpowers. Kindle Page Flip Inventor. Fulbright Scholar Semi-Finalist. Vaccinated karaoke fan for life.">
+    <link rel="canonical" href="https://sancheng.xyz">
+    <meta property="og:title" content="San Cheng - Product Designer, Builder, Artist">
+    <meta property="og:description" content="San Cheng's Portfolio">
+    <meta property="og:url" content="https://sancheng.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="San Cheng">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="San Cheng - Product Designer, Builder, Artist">
+    <meta name="twitter:description" content="Technical Product UX Designer with 9 years of experience in corporate, agency, startup teams. >5.5
+    years leading and collaborating with design, cross-functional leads. Creative, pragmatic, agile,
+    experimental superpowers. Kindle Page Flip Inventor. Fulbright Scholar Semi-Finalist. Vaccinated karaoke fan for life.">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:url" content="https://sancheng.xyz">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="630">
+    <meta name="twitter:image:alt" content="San Cheng">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg" href="imgs/prism_192x192.svg" media="(prefers-color-scheme: light)" sizes="192x192">
+    <link rel="icon" type="image/svg" href="imgs/prism_192x192.svg" media="(prefers-color-scheme: dark)" sizes="192x192">
+    <link rel="icon" type="image/svg" href="imgs/prism_64x64.svg" media="(prefers-color-scheme: light)" sizes="64x64">
+    <link rel="icon" type="image/svg" href="imgs/prism_64x64.svg" media="(prefers-color-scheme: dark)" sizes="64x64">
+    <link rel="icon" type="image/svg" href="imgs/prism_32x32.svg" media="(prefers-color-scheme: light)" sizes="32x32">
+    <link rel="icon" type="image/svg" href="imgs/prism_32x32.svg" media="(prefers-color-scheme: dark)" sizes="32x32">
+    <link rel="icon" type="image/svg" href="imgs/prism_16x16.svg" media="(prefers-color-scheme: light)" sizes="16x16">
+    <link rel="icon" type="image/svg" href="imgs/prism_16x16.svg" media="(prefers-color-scheme: dark)" sizes="16x16">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/panes.css">
+</head>
+<body>
+    <!-- SVG Filter Definitions -->
+    <svg class="svg-filters" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <defs>
+            <filter id="turbulence-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.2" numOctaves="4" result="noise">
+                    <animate attributeName="baseFrequency" values="0.01 0.2;0.02 0.25;0.015 0.22;0.01 0.2" dur="2s" repeatCount="indefinite"/>
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="30">
+                    <animate attributeName="scale" values="30;35;25;30" dur="1.5s" repeatCount="indefinite"/>
+                </feDisplacementMap>
+            </filter>
+        </defs>
+    </svg>
+    
+    <!-- Header -->
+    <header role="banner" class="header header-grid">
+        <div>
+            <nav role="navigation" aria-label="Navigation">
+                <ul>
+                    <li><a href="../index.html"><img src="../imgs/gem.gif" alt="Rotating gem" style="vertical-align: middle; width: 5rem; margin-left: -2.8rem"></a></li>
+                    <li><a href="../index.html#projects-heading-1">Design</a></li>
+                    <li><a href="../index.html#notes-heading">Notes</a></li>
+                    <li><a href="../founts.html">Founts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div></div>
+        <div>
+            <div onclick="tdnn()" class="toggl">
+                <div class="moon">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="note-content" role="note content" aria-label="Note Content">
+        <section aria-labelledby="note-heading" aria-label="Note">
+            <sub>October 25, 2024</sub>
+            <br><br>
+            <h1 id="notes-heading">Color Theory Models</h1>
+            <h2>A reference plus a few applications</h2>
+        </section>
+        <section>
+            <h3>ROYGBIV</h3>
+            <p>I first learned the ROYGBIV mnemonic for Red, Orange, Yellow, Green, Blue, Indigo, Violet as an ordered representation of the visible-to-human wavelength spectrum.</p>
+            <picture>
+                <source media="(max-width: 768px)" srcset="assets1/color-theory/wavelengths-480.webp">
+                <source media="(min-width: 769px)" srcset="assets1/color-theory/wavelengths-1172.webp">
+                <img src="assets1/color-theory/wavelengths-1172.webp" 
+                     alt="Wavelengths and the visible-to-human light spectrum" 
+                     loading="lazy">
+            </picture>
+        </section>
+        <section>
+            <h3>RYB (paint)</h3>
+            <p>Primaries: Red, Yellow, Blue<br>
+                Secondaries (primary + primary mixing): Orange, Green, Purple<br>
+                Tertiary colors (primary + adjacent secondary mixing): Red-Orange, Yellow-Green, Blue-Violet</p>
+            <p>Color mixing via paint or pigments makes the mixed color closer to black.</p>
+        </section>
+        <section>
+            <h3>CMYK (print)</h3>
+            <p>CMYK = Cyan, Magenta, Yellow, Black<br>
+                Yellow + Magenta = Red<br>
+                Magenta + Cyan = Blue<br>
+                Cyan + Yellow = Green</p>
+            <p>Cyan + Magenta + Yellow = Black<br>
+                Red + Blue + Green = White</p>
+            <p>Color mixing via light makes the mixed color closer to white.</p>
+            <picture>
+                <source media="(max-width: 768px)" srcset="assets1/color-theory/rgbw-cmyk-480.webp">
+                <source media="(min-width: 769px)" srcset="assets1/color-theory/rgbw-cmyk-1172.webp">
+                <img src="assets1/color-theory/rgbw-cmyk-1172.webp" 
+                     alt="RGBW vs. CMYK" 
+                     loading="lazy">
+            </picture>
+            <p>Halftone printing enables CMYK ink to add additional perceived colors. I sincerely bid you good luck with matching colors from your screen to your fabric swag or colored paper.</p>
+        </section>
+        <section>
+            <h3>HSV, HSL, HSB, HSI</h3>
+            <p>H = Hue<br>
+                S = Saturation<br>
+                V = Value<br>
+                B = Brightness<br>
+                I = Intensity</p>
+            <p>There's a lack of consistent standardization and range in colloquial usage of the following terms but they remain widely used across the graphic arts, commercial printing, computer graphics, etc. worlds but:</p>
+            <ul>
+                <li> Hue or Shade = Color groupings or associations known by name such as Green or Viridian</li>
+                <li>Saturation or Chroma = Color intensity or purity</li>
+                <li>Light or Brightness or Value = Color across tint, tone, and shade</li>
+            </ul>
+            <ul>
+                <li>Tint = Color + White</li>
+                <li>Tone = Color + Gray</li>
+                <li>Shade = Color + Black</li>
+            </ul>
+        </section>
+        <section>
+            <h3>RGB (light)</h3>
+            <p>RGB or red, green, and blue light-emitting diodes or LEDs create colors on electronic screens.</p>
+            <p>When decimal or base-10 numbers represent colors, each diode's intensity is represented in 256 levels from 0 (no intensity) - 255 (full intensity) in a series of 3 numbers representing Red, Green and Blue respectively:</p>
+            <ul>
+                <li>Red = (255, 0, 0)</li>
+                <li>Green = (0, 255, 0)</li>
+                <li>Blue = (0, 0, 255)</li>
+                <li>White = (255, 255, 255)</li>
+                <li>Black = (0, 0, 0)</li>
+                <li>Gray = (128, 128, 128) - notice that 128 is about half of 255</li>
+                <li>White = (255, 255, 255)</li>
+            </ul>
+            <p>255 is the maximum number represented by a byte, which is the 8-bit binary (base-2) number, 11111111.</p>
+        </section>
+        <section>
+            <h3>Hexadecimal</h3>
+            <p>When hexadecimal or base-16 numbers represent colors, each diode's intensity is represented in 2-digit codes ranging from 00 (no intensity) - FF (full intensity) in a series of three codes representing Red, Green, and Blue respectively:</p>
+            <ul>
+                <li>Red = FF0000</li>
+                <li>Green = 00FF00</li>
+                <li>Blue = 0000FF</li>
+                <li>White = FFFFFF</li>
+                <li>Black = 000000</li>
+                <li>Gray = 808080</li>
+            </ul>
+            <p>Diodes mix for additional colors:</p>
+            <ul>
+                <li>Red + Green = Yellow = FFFF00</li>
+                <li>Green + Blue = Cyan = 00FFFF</li>
+                <li>Red + Blue = Magenta = FF00FF</li>
+            </ul>
+            <p>To count by hexadecimals or convert them from decimal or base-10 numbers, each hexadecimal digit has a value of 0–15 like so:</p>
+        <section>
+            <div class="table-scroll-container">
+                <table>
+                <tr>
+                    <th>Decimal</th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <th>Hexadecimal</th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>1A</td>
+                    <td>1B</td>
+                    <td>1C</td>
+                    <td>1D</td>
+                    <td>1E</td>
+                    <td>1F</td>
+                </tr>
+            </table>
+            </div>
+        <br>
+            <table>
+                <tr>
+                    <th>Decimal</th>
+                    <th>Hexadecimal</th>
+                    <th>Digits</th>
+                </tr>
+                <tr>
+                    <td>0-9</td>
+                    <td>00-09</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>10-15</td>
+                    <td>0A-0F</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>16-25</td>
+                    <td>10-19</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>32-41</td>
+                    <td>20-29</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>42-47</td>
+                    <td>2A-2F</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>48-57</td>
+                    <td>30-39</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>154-159</td>
+                    <td>9A-9F</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>160-169</td>
+                    <td>A0-A9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>170-175</td>
+                    <td>AA-AF</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>176-191</td>
+                    <td>B0-BF</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>240-249</td>
+                    <td>F0-F9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>250-255</td>
+                    <td>FA-FF</td>
+                    <td>6</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <h2>Example Applications</h2>
+            <p>Throw most of what was written out the door.</p>
+            <h3>Skin Colorism and Beyond</h3>
+            <p><a href="https://aeon.co/essays/when-homer-envisioned-achilles-did-he-see-a-black-man" target="_blank">When Homer envisioned Achilles, did he see a Black man?</a></p>
+            <h3>Hair Coloring x Aesthetics Industry Marketing</h3>
+            <p>Coloring hair requires knowing your base color and condition as well as the target color.</p>
+            <p>For example, starting with undamaged pale blonde hair removes the need for bleaching.</p> 
+            <p>Red, orange, auburn, or brown hair dying falls within its own spectrum when colors are added. Results may significantly vary.</p>
+            <p>Natural dark hair colors can skip bleaching but require color-depositing masks and continued maintenance for color sustenance.</p>
+            <p>Aiming to achieve pastel colors with dark brown or black hair requires multiple bleaching, dying, toning, and conditioning sessions not to mention additional waiting times in between to attain highly saturated or pastel colors while minimizing hair or scalp damage.</p>
+            <p>Bleach is also called developer, which breaks down natural melanin pigments, also known as lifting hair through numbered levels from black (1) to pale yellow or the lightest blonde (10). After bleaching, using toner, which contains purple or blue pigments, neutralizes brassy yellow warm tones in bleached dark hair towards the light blonde canvas that allows for directly translated colors to the tresses.</p>
+            <p>Don't even get me started on textures.</p>
+            <p>If you want to play it safe, hair strand tests and patience are your best friends. Alternatively, go to an experienced professional.</p>
+        </section>
+        
+        <section>
+            <a href="../index.html#notes-heading"><button class="button">Return to Notes</button></a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="footer" class="footer grid" aria-label="Footer">
+        <nav role="footer navigation" aria-label="Footer Navigation">
+            <ul>
+                <li><a href="../colophon.html">🖋️ Colophon</a></li>
+                <li><a href="https://linkedin.com/in/ssaann" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/ssaanndwich" target="_blank">Github</a></li>
+                <li><a href="https://drive.google.com/file/d/1Ugbpw9Hbo3UHLWpjYvaYwliQrLTi3axB/view?usp=sharing"
+                        target="_blank">Resume</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="../scripts/toggl.js"></script>
+
+    <!-- Textured Background -->
+    <div class="texture"></div>
+</body>
+</html> 

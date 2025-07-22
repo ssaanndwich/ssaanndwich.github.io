@@ -2,6 +2,7 @@
 🎉 MVP Launched!
 
 ## Design & Development Notes
+July 21: Fixed Fount images not loading due to JPG vs. jpg case. Tested on additional devices and browsers. Found atrocious bugs and added tickets. Started custom domain configuration, domain registrar change request, DNS rerouting.  
 July 19-20: Compressed imgs and vids, reducing 70% of the starting file size at the start of the weekend (>330mb to ~98mb). Reorganized and cleaned more files and folders. Styled all notes, such as reorganizing html, padding and colors to the table, and lazy loading responsive images. Finished adding tabindices to index, Founts. Added Colophon. Launched MVP!  
 July 18: Delineated between fount-gallery and founts-gallery classes to deconstruct into separate gallery IDs. Finished adding and formatting Founts gallery content. Sussed out javascript iframe embed and styling. Cleaned up more html files.    
 July 17: Rerouted select links to Figma slides, Youtube, or other websites. Deleted unused javascript and html. Created and inserted favicon assets and html. Finished migrating Notes, adding pane background videos. Added Founts content. Cleaned and reorganized files. Rescoped MVP.  

@@ -408,7 +408,7 @@
     .header-grid {
         display: grid;
         grid-template-columns: var(--header-columns);
-        column-gap: min(5vw,5rem);
+        column-gap: min(0vw,5rem);
     }
 
     header {
@@ -630,7 +630,6 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     }
 
-    /* Responsive image sizing based on viewport */
     @media (max-width: 479px) {
         .note-content img,
         .note-content picture img {
@@ -672,6 +671,10 @@
             margin: 0 auto;
         }
 
+        .left {
+            width: min-content;
+        }
+
         /* .note-content {
             max-width: 60vw;
             margin: 0 auto;
@@ -683,6 +686,10 @@
             gap: var(--gap-2);
         }
 
+        #name-logo {
+            max-width: 100%;
+        }
+
         .jumbotron .experience-heading {
             margin-bottom: 0;
         }
@@ -691,6 +698,7 @@
             grid-template-columns: var(--jumbotron-founts);
             margin-bottom: 11em;
         }
+
     }
 
     @media (min-width: 480px) and (max-width: 637px) {
@@ -935,7 +943,6 @@
         }
     }
         
-    /* Large screen optimization */
     @media (min-width: 1025px) and (max-width: 1199px) {
         body {
             max-width: 75vw;
@@ -1002,7 +1009,6 @@
             background-color: var(--color-steel);
         }
     }
-
 
     @media (min-width: 1200px) {
         header {

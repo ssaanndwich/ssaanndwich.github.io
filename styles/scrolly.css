@@ -118,6 +118,7 @@
         flex-direction: column;
         max-width: 24rem;
         text-align: center;
+        color: var(--color-black);
     }
 
     video#founts-jumbotron-video {
@@ -228,6 +229,7 @@
 
     .jumbotron-founts {
         grid-template-columns: var(--jumbotron-founts);
+        color: var(--color-steel)
     }
 
     .founts-trio-row {

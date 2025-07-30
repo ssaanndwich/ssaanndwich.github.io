@@ -18,7 +18,7 @@
         
         /* 12 Column Grid Configuration */
         --grid-columns-default: 10fr 1fr 1fr;  /* Default: 3 columns */
-        --grid-columns-first: 8fr 1fr 1fr 1fr 1fr;    /* First section: 5 columns */
+        --grid-columns-first: 8fr 1fr 1fr 1fr;    /* First section: 4 columns */
         --grid-columns-second: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* Second section: 8 columns */
     }
 }

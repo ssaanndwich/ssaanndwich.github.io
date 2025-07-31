@@ -4,12 +4,13 @@
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/imgs/mvp_preview.gif)
 
 ## Release Notes
+July 29-30: Updated File Architecture Figjam, index projects, css, pdf. Evaluated project directions. Found tabindex bug on index Notes section. Created DNSSEC record. Investigated https enforcement, SSL certificate. Updated, rescoped, reprioritized tickets. Enforced https and updated SSL certificate.   
 July 28: Analytics feeds are functioning. Transferred domain successfully. Updated records in gaining registrar. Redirected name servers. Investigated https enforcement. Updated direct links in external docs and sites.  
 July 24: Got analytics working on a page. Troubleshooting remaining feeds. Worked with registrar support regarding authorization and transaction issues. Procured EPP (Extensible Provisioning Protocol) key.  
 July 23: Resized image and updated Founts video.  
 July 22: Troubleshooting analytics feed. Waiting on registrar support. Reviewed tickets for rescoping.   
 July 21: Fixed Fount images not loading due to JPG vs. jpg case. Tested on additional devices and browsers. Found atrocious bugs and added tickets. Started custom domain configuration, domain registrar change request, DNS rerouting.  
-July 19-20: Compressed imgs and vids, reducing 70% of the starting file size at the start of the weekend (>330mb to ~98mb). Reorganized and cleaned more files and folders. Styled all notes, such as reorganizing html, padding and colors to the table, and lazy loading responsive images. Finished adding tabindices to index, Founts. Added Colophon. Launched MVP!  
+July 19-20: Compressed imgs and vids, reducing 70% of the starting file size at the start of the weekend (>330mb to ~98mb). Reorganized and cleaned more files and folders. Styled all notes, such as reorganizing html, padding and colors to the table, and lazy loading responsive images. Finished adding tabindices to index, Founts. Added Colophon. 🎉 Launched MVP!  
 July 18: Delineated between fount-gallery and founts-gallery classes to deconstruct into separate gallery IDs. Finished adding and formatting Founts gallery content. Sussed out javascript iframe embed and styling. Cleaned up more html files.    
 July 17: Rerouted select links to Figma slides, Youtube, or other websites. Deleted unused javascript and html. Created and inserted favicon assets and html. Finished migrating Notes, adding pane background videos. Added Founts content. Cleaned and reorganized files. Rescoped MVP.  
 July 16: Added tabindices to index links and buttons. Built Projects page skeleton. Adjusted padding and alignment issues.  

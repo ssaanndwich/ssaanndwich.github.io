@@ -4,6 +4,7 @@
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/imgs/mvp_preview.gif)
 
 ## Release Notes
+Aug 5: Added arrows for external project links. Tested mp3, wav, m4a, mp4 file formats for browser compatibility. Added audio files and mouseover event listener scripts.  
 July 29-30: Updated File Architecture Figjam, index projects, css, pdf. Evaluated project directions. Found tabindex bug on index Notes section. Created DNSSEC record. Investigated https enforcement, SSL certificate. Updated, rescoped, reprioritized tickets. Enforced https and updated SSL certificate.   
 July 28: Analytics feeds are functioning. Transferred domain successfully. Updated records in gaining registrar. Redirected name servers. Investigated https enforcement. Updated direct links in external docs and sites.  
 July 24: Got analytics working on a page. Troubleshooting remaining feeds. Worked with registrar support regarding authorization and transaction issues. Procured EPP (Extensible Provisioning Protocol) key.  

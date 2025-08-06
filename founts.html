@@ -245,6 +245,18 @@
     <!-- Textured Background -->
     <div class="texture"></div>
     <!-- <script src="scripts/theme-switcher.js"></script> -->
-</body>
 
+    <!-- Audio for link hover -->
+    <audio id="link-hover-audio" src="./audio/ding.wav" preload="auto"></audio>
+    <script>
+      // Play audio on link hover
+      const hoverAudio = document.getElementById('link-hover-audio');
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          hoverAudio.currentTime = 0;
+          hoverAudio.play();
+        });
+      });
+    </script>
+</body>
 </html>

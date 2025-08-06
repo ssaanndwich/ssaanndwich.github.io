@@ -73,7 +73,7 @@
         <div>
             <nav role="navigation" aria-label="Navigation">
                 <ul>
-                    <li><a tabindex="1" href="./index.html"><img src="../imgs/gem.gif" alt="Rotating gem" style="vertical-align: middle; width: 5rem; margin-left: -2.8rem"></a></li>
+                    <li><a tabindex="1" href="./index.html"><img src="./imgs/gem.gif" alt="Rotating gem" style="vertical-align: middle; width: 5rem; margin-left: -2.8rem"></a></li>
                     <li><a tabindex="2" href="./index.html#projects-heading-1">Design</a></li>
                     <li><a tabindex="3" href="./index.html#notes-heading">Notes</a></li>
                     <li><a tabindex="4" href="./founts.html">Founts</a></li>
@@ -227,5 +227,18 @@
 
     <!-- Textured Background -->
     <div class="texture"></div>
+
+    <!-- Audio for link hover -->
+    <audio id="link-hover-audio" src="./audio/ding.wav" preload="auto"></audio>
+    <script>
+      // Play audio on link hover
+      const hoverAudio = document.getElementById('link-hover-audio');
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          hoverAudio.currentTime = 0;
+          hoverAudio.play();
+        });
+      });
+    </script>
 </body>
-</html> 
+</html>

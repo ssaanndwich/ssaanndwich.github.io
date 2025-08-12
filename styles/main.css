@@ -500,7 +500,7 @@
     }
 
     .note-content section p img {
-        max-width: 100%;
+        max-width: min-content;
     }
 
     .note-content section sub {
@@ -652,7 +652,6 @@
         .note-content picture img {
             max-width: 85%;
             margin: 2rem auto;
-            display: block;
         }
     }
 }

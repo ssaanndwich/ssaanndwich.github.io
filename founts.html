@@ -14,7 +14,8 @@
       
         gtag('config', 'G-ZHHWMLZMXM');
       </script>
-    <!-- Preload Responsive Images -->
+    <!-- Preload Media -->
+    <audio type="audio/mp3" id="link-hover-audio" src="audio/boop.mp3" preload="auto"></audio>
     <!-- <link rel="preload" as="image" href=""> -->
     <!-- Meta and Social -->
     <title>Founts / San Cheng</title>
@@ -237,17 +238,16 @@
         </defs>
     </svg>
 
+    <!-- Textured Background -->
+    <div class="texture"></div>
+
     <!-- Scripts -->
     <!-- <script src="scripts/oneko.js"></script> -->
+    <!-- <script src="scripts/theme-switcher.js"></script> -->
     <script src="scripts/toggl.js"></script>
     <script type="module" src="scripts/panes.js"></script>
 
-    <!-- Textured Background -->
-    <div class="texture"></div>
-    <!-- <script src="scripts/theme-switcher.js"></script> -->
-
-    <!-- Audio for link hover -->
-    <audio id="link-hover-audio" src="audio/boop.mp3" preload="auto"></audio>
+    <!-- Audio for Link Hover -->
     <script>
       // Play audio on link hover with autoplay policy handling
       const hoverAudio = document.getElementById('link-hover-audio');

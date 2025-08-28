@@ -4,6 +4,7 @@
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/imgs/mvp_preview.gif)
 
 ## Release Notes
+Aug 19-22, 25-27: Arranging chats, checking availabilities, and collecting and organizing feedback from eng leads and fellow designers  
 Aug 18: Cleaned up old site files. Investigated favicon caching issues in certain browsers. Examining calc and clamp methods for controlled scaling instead of fixed toggle and notes margin lines responsive sizing  
 Aug 13: Testing preloading audio with Cursor and GPT-5 vs. Claude. Researching to more accurately scope tasks.  
 Aug 11: Cleaned up index.html links, resized Notes images, and fixed Notes favicon folder reference paths.   

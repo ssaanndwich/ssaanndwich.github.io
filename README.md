@@ -1,7 +1,7 @@
 # Portfolio Site
 🎉 MVP Launched!
 
-![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/imgs/mvp_preview.gif)
+![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mvp_preview.gif)
 
 ## Release Notes
 Aug 19-22, 25-27: Arranging chats, checking availabilities, and collecting and organizing feedback from eng leads and fellow designers  

@@ -4,6 +4,7 @@
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mvp_preview.gif)
 
 ## Release Notes
+Sep 12: Fixed and improved favicon assets, html for old and modern browsers, Apple. Set up manifest.json for Android. Fixing mobile and responsive width issues across header, nav, main
 Sep 2: Fixed image loading issue  
 Aug 28-29: Blueprinting imgs, imgs > founts, imgs > favicons, vids file reorganization and clean up  
 Aug 19-22, 25-27: Arranging chats, checking availabilities, and collecting and organizing feedback from eng leads and fellow designers  

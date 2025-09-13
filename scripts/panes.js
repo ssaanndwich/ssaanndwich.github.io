@@ -33,7 +33,7 @@ const sync = (event) => {
 ctrl.on('change', sync)
 update() */
 
-// the one piece we need goes here
+// Declare a variable that refers to projects grid ul elements
 const lists = document.querySelectorAll('.projects-grid ul')
 
 console.log('Lists found:', lists.length)
@@ -48,18 +48,18 @@ lists.forEach((list, listIndex) => {
     if (closest) {
       const index = [...items].indexOf(closest)
       
-      // Check if we're on mobile (768px breakpoint)
+      // Declare a breakpoint variable as the viewport being ≤ 768px
       const isMobile = window.innerWidth <= 768
       
       if (isMobile) {
-        // On mobile, don't change grid columns, just set active state
+        // On mobile, set each pane's active state to true
         items.forEach((item, i) => {
-          item.dataset.active = 'true' // All items are active on mobile
+          item.dataset.active = 'true'
         })
         return
       }
       
-      // Desktop behavior - expand selected item
+      // On desktop, expand selected pane, toggle pane's active states, and set grid-template-columns to 10fr or 1fr
       const cols = new Array(list.children.length)
         .fill()
         .map((_, i) => {
@@ -78,15 +78,14 @@ lists.forEach((list, listIndex) => {
   list.addEventListener('pointermove', setIndex)
   
   const resync = () => {
-    const w = Math.max(
-      ...[...items].map((i) => {
-        return i.offsetWidth
-      })
-    )
-    list.style.setProperty('--li-width', w)
+    const widths = [...items].map(i => i.offsetWidth)
+    const w = Math.max(...widths)
+    const isMobile = window.innerWidth <= 768
+  
+    const targetWidth = isMobile ? Math.max(w, list.clientWidth) : w
+    list.style.setProperty('--li-width', `${targetWidth}px`)
     
     // Reset grid behavior on resize
-    const isMobile = window.innerWidth <= 768
     if (isMobile) {
       items.forEach((item) => {
         item.dataset.active = 'true'

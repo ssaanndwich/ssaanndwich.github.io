@@ -17,11 +17,11 @@
     <!-- <link rel="preload" as="image" href=""> -->
     <title>Notes / San Cheng</title>
     <!-- Favicons -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" >
-    <link rel="manifest" href="imgs/favicons/manifest.json">
-    <link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicons/apple-touch-icon.png" type="image/png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" >
-    <link rel="icon" href="imgs/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" >
+    <link rel="manifest" href="../imgs/favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="../imgs/favicons/apple-touch-icon.png" type="image/png">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" >
+    <link rel="icon" href="../imgs/favicons/favicon.svg" type="image/svg+xml">
     <!-- Meta and Social -->
     <meta name="description" content="Technical Product UX Designer with 9 years of experience in corporate, agency, startup teams. >5.5
     years leading and collaborating with design, cross-functional leads. Creative, pragmatic, agile,
@@ -76,7 +76,7 @@
         <div>
             <nav role="navigation" aria-label="Navigation">
                 <ul>
-                    <li><a href="../"><img src="../imgs/gem.gif" alt="Rotating gem" style="vertical-align: middle; width: 5rem; margin-left: -2.8rem"></a></li>
+                    <li><a href="../"><img src="../imgs/gem.gif" alt="Rotating gem"></a></li>
                     <li><a href="../index#projects-heading-1">Design</a></li>
                     <li><a href="../index#notes-heading">Notes</a></li>
                     <li><a href="../founts">Founts</a></li>
@@ -85,7 +85,7 @@
         </div>
         <div></div>
         <div>
-            <div onclick="tdnn()" class="toggl">
+            <button tabindex="5" onclick="tdnn()" class="toggl" role="switch" aria-label="Light Dark Mode Toggle">
                 <div class="moon">
                 </div>
             </div>
@@ -127,16 +127,13 @@
     </main>
 
     <!-- Footer -->
-    <footer role="footer" class="footer grid" aria-label="Footer">
-        <nav role="footer navigation" aria-label="Footer Navigation">
-            <ul>
-                <li><a href="../colophon">🖋️ Colophon</a></li>
-                <li><a href="https://linkedin.com/in/ssaann" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/ssaanndwich" target="_blank">Github</a></li>
-                <li><a href="https://drive.google.com/file/d/1Ugbpw9Hbo3UHLWpjYvaYwliQrLTi3axB/view?usp=sharing"
-                        target="_blank">Resume</a></li>
-            </ul>
-        </nav>
+    <footer role="footer navigation" class="footer-grid" aria-label="Footer Navigation">
+        <ul>
+            <li><a tabindex="29" href="../colophon">Colophon ✎</a></li>
+            <li><a tabindex="30" href="https://linkedin.com/in/ssaann" target="_blank">LinkedIn ↗</a></li>
+            <li><a tabindex="31" href="https://github.com/ssaanndwich" target="_blank">Github ↗</a></li>
+            <li><a tabindex="32" href="https://drive.google.com/file/d/1Ugbpw9Hbo3UHLWpjYvaYwliQrLTi3axB/view?usp=sharing" target="_blank">Resume ↗</a></li>
+        </ul>
     </footer>
 
     <script src="../scripts/toggl.js"></script>

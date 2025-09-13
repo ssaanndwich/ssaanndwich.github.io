@@ -4,6 +4,7 @@
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mvp_preview.gif)
 
 ## Release Notes
+Sep 13: Cleaned up redundancies and added media query code in panes css. Cleaned up footer html, css across pages. Fixed favicons, toggle file and colophon path refs, footer links, and nav spacing across notes. Fixed responsive spacings for mobile breakpoints, such as li-width declaration in panes javscript. Removed hard-coded nav>ul li img styles in notes html. Used Samsung device simulator for mobile QA  
 Sep 12: Fixed and improved favicon assets, html for old and modern browsers, Apple. Set up manifest.json for Android. Fixing mobile and responsive width issues across header, nav, main  
 Sep 2: Fixed image loading issue  
 Aug 28-29: Blueprinting imgs, imgs > founts, imgs > favicons, vids file reorganization and clean up  

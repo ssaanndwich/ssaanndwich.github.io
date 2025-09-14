@@ -1,10 +1,11 @@
-# Portfolio Site
-🎉 MVP Launched!
+# Portfolio Site  
 
+## Desktop & Mobile Previews
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mvp_preview.gif)
+<img src="https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mobile_preview.gif" height="466px" alt="Preview of mobile">
 
 ## Release Notes
-Sep 13: Cleaned up redundancies and added media query code in panes css. Cleaned up footer html, css across pages. Fixed favicons, toggle file and colophon path refs, footer links, and nav spacing across notes. Fixed responsive spacings for mobile breakpoints, such as li-width declaration in panes javscript. Removed hard-coded nav>ul li img styles in notes html. Used Samsung device simulator for mobile QA  
+Sep 13: 🎉 Major responsive improvements! Cleaned up redundancies and added media query code in panes css. Cleaned up footer html, css across pages. Fixed favicons, toggle file and colophon path refs, footer links, and nav spacing across notes. Fixed responsive spacings for mobile breakpoints, such as li-width declaration in panes javscript. Removed hard-coded nav>ul li img styles in notes html. Used Samsung device simulator for mobile QA  
 Sep 12: Fixed and improved favicon assets, html for old and modern browsers, Apple. Set up manifest.json for Android. Fixing mobile and responsive width issues across header, nav, main  
 Sep 2: Fixed image loading issue  
 Aug 28-29: Blueprinting imgs, imgs > founts, imgs > favicons, vids file reorganization and clean up  
@@ -19,7 +20,7 @@ July 24: Got analytics working on a page. Troubleshooting remaining feeds. Worke
 July 23: Resized image and updated Founts video.  
 July 22: Troubleshooting analytics feed. Waiting on registrar support. Reviewed tickets for rescoping.   
 July 21: Fixed Fount images not loading due to JPG vs. jpg case. Tested on additional devices and browsers. Found atrocious bugs and added tickets. Started custom domain configuration, domain registrar change request, DNS rerouting.  
-July 19-20: Compressed imgs and vids, reducing 70% of the starting file size at the start of the weekend (>330mb to ~98mb). Reorganized and cleaned more files and folders. Styled all notes, such as reorganizing html, padding and colors to the table, and lazy loading responsive images. Finished adding tabindices to index, Founts. Added Colophon. 🎉 Launched MVP!  
+July 19-20: 🎉 Launched desktop MVP! Compressed imgs and vids, reducing 70% of the starting file size at the start of the weekend (>330mb to ~98mb). Reorganized and cleaned more files and folders. Styled all notes, such as reorganizing html, padding and colors to the table, and lazy loading responsive images. Finished adding tabindices to index, Founts. Added Colophon.  
 July 18: Delineated between fount-gallery and founts-gallery classes to deconstruct into separate gallery IDs. Finished adding and formatting Founts gallery content. Sussed out javascript iframe embed and styling. Cleaned up more html files.    
 July 17: Rerouted select links to Figma slides, Youtube, or other websites. Deleted unused javascript and html. Created and inserted favicon assets and html. Finished migrating Notes, adding pane background videos. Added Founts content. Cleaned and reorganized files. Rescoped MVP.  
 July 16: Added tabindices to index links and buttons. Built Projects page skeleton. Adjusted padding and alignment issues.  

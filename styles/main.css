@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Breite Regular';
+    src: url('../fonts/regular-webfont.woff2') format('woff2'),
+         url('../fonts/regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 :root {
     --color-sheet: #252525;
     --color-link: #aa86f5;
@@ -14,9 +23,9 @@
     --color-sky: #43A5DD;
 
     --focus-outline: 3px solid #aa86f5;
-    --font-family-heading: 'Inter', sans-serif;
-    --font-family-body: 'Inter', sans-serif;
-    --font-spacing-lg: -.02em;
+    --font-family-heading: 'Breite Regular', 'Inter', sans-serif;
+    --font-family-body: 'Breite Regular', 'Inter', sans-serif;
+    --font-spacing-lg: -.01em;
 
     --size-base: 1.6rem;
     --size-scale: 1.2;
@@ -27,7 +36,6 @@
     --size-lg: calc(var(--size-md)*var(--size-scale));
     --size-xl: calc(var(--size-lg)*var(--size-scale));
     --size-xxl: calc(var(--size-xl)*var(--size-scale));
-    
     
     --gap-1: 1rem;
     --gap-2: 2rem;
@@ -155,6 +163,14 @@
         color: var(--color-steel) !important;
     }
 
+    .jumbotron h3.ly {
+        color: var(--color-white);
+    }
+
+    .light .jumbotron h3.ly {
+        color: var(--color-steel);
+    }
+
     .jumbotron h4 {
         color: var(--color-white);
         font-size: var(--size-xs);
@@ -218,7 +234,7 @@
         color: var(--color-white);
         transition: all .2s ease-in-out;
         background: var(--color-midnight);
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family: var(--font-family-body);
         line-height: 1.6;
     }
 
@@ -307,6 +323,7 @@
 
     /* Navigation */
     nav {
+        font-family: var(--font-family-heading);
         padding-block: var(--size-md);
         justify-content: center;
         align-items: center;
@@ -330,6 +347,7 @@
     }
 
     nav>ul a, footer>ul a {
+        font-size: larger;
         color: var(--color-purple);
         padding-block: var(--size-xs);
         padding-inline: var(--size-sm);

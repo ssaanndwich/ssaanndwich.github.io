@@ -229,7 +229,6 @@
 
 /* Base Styles: Elements, Layout Primitives */
 @layer base {
-      
     body {
         color: var(--color-white);
         transition: all .2s ease-in-out;

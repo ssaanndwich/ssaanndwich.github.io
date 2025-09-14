@@ -125,6 +125,7 @@
     text-wrap: balance;
     line-height: 1.45;
     --opacity: 0.8;
+    font-size: large;
   }
 
   .light .projects-grid p {
@@ -143,6 +144,7 @@
     left: calc(var(--base) * 0.5 - 9px + 2em); /* Position next to emoji */
     height: 1em;
     line-height: 1;
+    font-size: large;
     color: light-dark(var(--color-white), var(--color-midnight));
   }
 

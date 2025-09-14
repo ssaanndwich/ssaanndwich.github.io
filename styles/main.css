@@ -349,7 +349,7 @@
         font-size: larger;
         color: var(--color-purple);
         padding-block: var(--size-xs);
-        padding-inline: var(--size-sm);
+        padding-inline: var(--size-xxs);
         line-height: 1.5;
         text-decoration: none;
         display: inline-block;
@@ -779,9 +779,7 @@
 
         /* Toggle button adjustments for mobile */
         .toggl {
-            font-size: 15%;
-            margin-top: 21em;
-            /* flex-shrink: 0; Prevent toggle from shrinking */
+            margin-top: 3.55rem;
         }
 
         nav>ul {

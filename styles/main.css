@@ -120,6 +120,22 @@
     }
 
     /* Typography */
+    #bpmf {
+        width: calc(100vw - 200px);
+        left: 200px;
+        right: 0;
+        display: block;
+        text-align: justify;
+        z-index: -1;
+        position: absolute;
+        -webkit-text-fill-color: linear-gradient(180deg, var(--color-white), rgba(255,0,0,0));
+        background: linear-gradient(180deg, var(--color-white), rgba(255, 0, 0, 0));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
     h1 {
         font-size: var(--size-xxl);
         line-height: 1;
@@ -334,7 +350,7 @@
         padding-inline: var(--size-sm);
         align-items: center;
         gap: var(--size-sm);
-        margin-inline-start:calc(var(--size-sm)*-2);
+        margin-inline-start:calc(var(--size-sm)*-1.5);
         display: flex;
         list-style-type: none;
     }
@@ -628,8 +644,7 @@
     }
 
     /* Responsive Images */
-    .note-content img, 
-    .note-content picture img {
+    .note-content img, .note-content picture img {
         width: 100%;
         height: auto;
         border-radius: 0.5rem;
@@ -637,46 +652,17 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .light .note-content img,
-    .light .note-content picture img {
+    .light .note-content img, .light .note-content picture img {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .note-content img:hover,
-    .note-content picture img:hover {
+    .note-content img:hover, .note-content picture img:hover {
         transform: scale(1.02);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
-    .light .note-content img:hover,
-    .light .note-content picture img:hover {
+    .light .note-content img:hover, .light .note-content picture img:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    @media (max-width: 479px) {
-        
-        .note-content img,
-        .note-content picture img {
-            max-width: 100%;
-            margin: 1rem 0;
-        }
-    }
-
-    @media (min-width: 480px) and (max-width: 768px) {
-        .note-content img,
-        .note-content picture img {
-            max-width: 90%;
-            margin: 1.5rem auto;
-            display: block;
-        }
-    }
-
-    @media (min-width: 769px) {
-        .note-content img,
-        .note-content picture img {
-            max-width: 85%;
-            margin: 2rem auto;
-        }
     }
 }
 
@@ -738,6 +724,15 @@
             margin-bottom: 11em;
         }
 
+        .jumbotron .right {
+            margin-top: 0em;
+        }
+
+        .note-content img, .note-content picture img {
+            max-width: 100%;
+            margin: 1rem 0;
+        }
+
         footer {
             margin-left: 1em;
         }
@@ -749,11 +744,6 @@
             max-width: 30em;
             margin: 0 auto;
         }
-
-        /* .note-content {
-            max-width: 60vw;
-            margin: 0 auto;
-        } */
         
         #header-spacer {
             display: none;
@@ -771,6 +761,32 @@
 
         .experience-heading .flex-container {
             gap: 4rem;
+        }
+
+        .jumbotron .right {
+            margin-top: 1.5rem;
+        }
+
+        #bpmf {
+            width: calc(100vw - 200px);
+            left: 200px;
+            right: 0;
+            display: block;
+            text-align: justify;
+            z-index: -1;
+            position: absolute;
+            -webkit-text-fill-color: linear-gradient(180deg, var(--color-white), rgba(255,0,0,0));
+            background: linear-gradient(180deg, var(--color-white), rgba(255, 0, 0, 0));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .note-content img, .note-content picture img {
+            max-width: 90%;
+            margin: 1.5rem auto;
+            display: block;
         }
     }
 
@@ -819,12 +835,8 @@
         main, header, footer, .note-content {
             max-width: 40em;
             margin: 0 auto;
+            padding: 1rem;
         }
-
-        /* .note-content {
-            max-width: 60vw;
-            margin: 0 auto;
-        } */
         
         /* Jumbotron becomes single column */
         .jumbotron {
@@ -844,13 +856,23 @@
             flex: 1;
         }
         
-        /* Adjust main content width for mobile */
-        main, header, footer {
-            max-width: 95vw;
-            padding: 1rem;
-        }
-        
         /* Typography */
+        #bpmf {
+            width: calc(73vw - 20px);
+            left: 22%;
+            top: 90%;
+            display: block;
+            text-align: justify;
+            z-index: -1;
+            position: absolute;
+            background: linear-gradient(180deg, var(--color-white), rgba(255, 0, 0, 0));
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: linear-gradient(180deg, var(--color-white), rgba(255,0,0,0));
+        }
+
         h1 {
             font-size: var(--size-xl);
         }
@@ -911,6 +933,12 @@
         .light .lines li::before {
             background-color: var(--color-steel);
         }
+
+        .note-content img, .note-content picture img {
+            max-width: 90%;
+            margin: 1.5rem auto;
+            display: block;
+        }
     }
 
     /* Tablet breakpoint - Keep sticky behavior and two-column layout */
@@ -933,11 +961,6 @@
             margin: 0 auto;
         }
 
-        /* .note-content {
-            max-width: 60vw;
-            margin: 0 auto;
-        } */
-
         .jumbotron {
             grid-template-columns: var(--jumbotron-default);
         }
@@ -953,6 +976,23 @@
 
         .light .bio-logo {
             filter: invert(.2);
+        }
+
+        #bpmf {
+            width: calc(16vw - 20px);
+            height: 28%;
+            left: 70%;
+            top: 34%;
+            display: block;
+            text-align: justify;
+            z-index: -1;
+            position: absolute;
+            background: linear-gradient(180deg, var(--color-white), rgba(255, 0, 0, 0));
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: linear-gradient(180deg, var(--color-white), rgba(255,0,0,0));
         }
 
         h2#projects-heading-1, h2#projects-heading-2, h2#notes-heading {
@@ -986,6 +1026,11 @@
         .light .lines li::before {
             background-color: var(--color-steel);
         }
+
+        .note-content img, .note-content picture img {
+            max-width: 85%;
+            margin: 2rem auto;
+        }
     }
         
     @media (min-width: 1025px) and (max-width: 1199px) {
@@ -1017,13 +1062,30 @@
             filter: invert(.2);
         }
 
-        /* Left-align bio logos */
         .right div:has(.bio-logo) {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             gap: 1rem;
             margin-top: 1rem;
+        }
+
+        #bpmf {
+            width: calc(36vw - 200px);
+            height: 28%;
+            left: 66%;
+            top: 34%;
+            right: 0;
+            display: block;
+            text-align: justify;
+            z-index: -1;
+            position: absolute;
+            background: linear-gradient(180deg, var(--color-white), rgba(255, 0, 0, 0));
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: linear-gradient(180deg, var(--color-white), rgba(255,0,0,0));
         }
 
         /* Lines for Notes */
@@ -1066,6 +1128,22 @@
             margin: 0 auto;
         }
 
+        #bpmf {
+            width: calc(31vw - 220px);
+            left: 77%;
+            top: 34%;
+            display: block;
+            text-align: justify;
+            z-index: -1;
+            position: absolute;
+            background: linear-gradient(180deg, var(--color-white), rgba(255, 0, 0, 0));
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: linear-gradient(180deg, var(--color-white), rgba(255,0,0,0));
+        }
+
         /* .note-content {
             max-width: 60vw;
             margin: 0 auto;
@@ -1076,8 +1154,8 @@
         }
 
         .jumbotron .left {
-            min-width: 40vw;
-            max-width: 50vw;
+            min-width: 50vw;
+            max-width: 60vw;
         }
     }
 }

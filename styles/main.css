@@ -975,9 +975,9 @@
         .lines li::before {
             content: "";
             position: absolute;
-            left: calc(-2.5 * var(--viewport-offset, 2rem));
+            left: calc(-2.5 * var(--viewport-offset, 4.5rem));
             top: 0.9rem;
-            width: 3.5rem;
+            width: 10rem;
             height: 0.1rem;
             background-color: var(--color-ash);
             display: block;

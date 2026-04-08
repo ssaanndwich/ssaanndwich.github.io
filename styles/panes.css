@@ -18,8 +18,8 @@
         
         /* 12 Column Grid Configuration */
         --grid-columns-default: 10fr 1fr 1fr;  /* Default: 3 columns */
-        --grid-columns-first: 8fr 1fr 1fr 1fr;    /* First section: 4 columns */
-        --grid-columns-second: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* Second section: 8 columns */
+        --grid-columns-first: 9fr 1.5fr 1.5fr;    /* First section: 3 columns */
+        --grid-columns-second: 6fr 1.5fr 1.5fr 1.5fr 1.5fr; /* Second section: 5 columns */
     }
 }
 
@@ -84,6 +84,7 @@
 
   .projects-grid article {
     height: 100%;
+    width: 100%;
     position: absolute;
     font-family: var(--font-family-heading);
     top: 0;
@@ -93,8 +94,14 @@
     justify-content: flex-end;
     gap: var(--gap);
     padding-inline: calc(var(--base) * 0.5 - 9px);
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
     overflow: hidden;
+  }
+
+  .projects-grid article > div {
+    position: absolute;
+    bottom: 1.4rem;
+    left: calc(var(--base) * 0.5 - 9px);
   }
 
   .projects-grid h5 {
@@ -102,21 +109,21 @@
     font-size: 1.2em;
     font-weight: 400;
     position: absolute;
-    top: 1rem;
-    left: calc(var(--base) * 0.5);
-    transform-origin: 0 50%;
+    top: .5rem;
+    left: calc(var(--base) * 0.4);
+    transform-origin: 0 70%;
     rotate: 90deg;
-    width: 150%;
+    white-space: nowrap;
     z-index: 1;
   }
 
   .projects-grid [data-active="false"] h5 {
-    width: 200%;
+    width: 250%;
   }
 
   .light .projects-grid h5 {
     color: var(--color-midnight);
-    width: 150%;
+    width: 250%;
   }
 
   .projects-grid p {
@@ -140,8 +147,9 @@
 
   .projects-grid a {
     position: absolute;
-    bottom: 1.4rem;
-    left: calc(var(--base) * 0.5 - 9px + 2em); /* Position next to emoji */
+    white-space: nowrap;
+    bottom: .3rem;
+    left: calc(var(--base) * 0.5 - 9px + .75em); /* Position next to emoji */
     height: 1em;
     line-height: 1;
     font-size: large;
@@ -157,7 +165,7 @@
     display: inline;
     padding: .1em .25em;
     text-underline-offset: 4px;
-    translate: calc(var(--base) * 0.5);
+    translate: calc(var(--base) * 0.4);
     font-weight: 500;
   }
 

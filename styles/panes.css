@@ -297,13 +297,13 @@
     .projects-grid a {
       position: static;
       margin-top: 0.5rem;
-      left: auto;
+      left: 0;
       bottom: auto;
     }
     
     .projects-grid span {
       translate: 0;
-      padding-left: 0.5rem;
+      padding-left: 1rem;
     }
     
     .projects-grid img {

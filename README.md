@@ -4,6 +4,9 @@
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mvp_preview.gif)
 <img src="https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mobile_preview.gif" height="466px" alt="Preview of mobile">
 
+## Status
+This project is undergoing minor tweaks since its launch in September 2025.
+
 ## Release Notes
 Sep 13: 🎉 Major responsive improvements! Cleaned up redundancies and added media query code in panes css. Cleaned up footer html, css across pages. Fixed favicons, toggle file and colophon path refs, footer links, and nav spacing across notes. Fixed responsive spacings for mobile breakpoints, such as li-width declaration in panes javscript. Removed hard-coded nav>ul li img styles in notes html. Used Samsung device simulator for mobile QA. Added and applied new font.  
 Sep 12: Fixed and improved favicon assets, html for old and modern browsers, Apple. Set up manifest.json for Android. Fixing mobile and responsive width issues across header, nav, main  

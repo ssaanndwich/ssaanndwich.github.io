@@ -127,6 +127,10 @@
         outline-offset: 2px;
     }
 
+    [tabindex]:focus-visible {
+        outline: 2px solid var(--color-accent);
+    }   
+
     /* Remove focus outline for mouse users */
     :focus:not(:focus-visible) {
         outline: none;
@@ -385,6 +389,10 @@
         position: relative;
         margin-bottom: 1.7rem;
         line-height: 1.5;
+    }
+
+    .lines li a {
+    display: block;
     }
 
     .lines li::before {

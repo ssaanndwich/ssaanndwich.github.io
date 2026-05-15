@@ -238,6 +238,40 @@
 /* Responsive design for projects grid */
 @layer media {
 
+  @media (min-width: 769px) { /*and (max-width: 1024px)*/
+
+    .projects-grid li {
+      height: 100%;
+    }
+    
+    .projects-grid a {
+      position: static;
+      margin-top: 0.5rem;
+      left: 0;
+      bottom: auto;
+    }
+    
+    .projects-grid .link-text, .projects-grid .arrow {
+      translate: 0;
+      padding-left: 0rem;
+      margin-left: 0rem;
+    }
+    
+    .projects-grid .emoji {
+      position: relative;
+      top: 0.4rem;
+      left: -0.25rem;
+      margin-right: 1rem;
+    }
+
+    .projects-grid .card-footer {
+      display: flex;
+      gap: 0rem;
+      margin-top: -6rem;
+    }
+
+  }
+
   @media (max-width: 768px) {
     :root {
       --base: clamp(1.5rem, 6cqi, 60px);

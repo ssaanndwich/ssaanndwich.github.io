@@ -28,7 +28,7 @@
     --font-spacing-lg: -.01em;
 
     --size-base: 1.6rem;
-    --size-scale: 1.2;
+    --size-scale: 1.3;
     --size-xxs: calc(var(--size-xs)/var(--size-scale));
     --size-xs: calc(var(--size-sm)/var(--size-scale));
     --size-sm: calc(var(--size-md)/var(--size-scale));

@@ -238,7 +238,7 @@
 /* Responsive design for projects grid */
 @layer media {
 
-  @media (min-width: 769px) { /*and (max-width: 1024px)*/
+  @media (min-width: 769px) and (max-width: 2048px) {
 
     .projects-grid li {
       height: 100%;

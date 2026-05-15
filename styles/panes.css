@@ -237,35 +237,6 @@
 
 /* Responsive design for projects grid */
 @layer media {
-  @media (max-width: 480px) {
-    h2#projects-heading-1, h2#projects-heading-2, h2#notes-heading, .lines {
-      margin-left: 1rem;
-    }
-
-    .projects-grid {
-      width: 100%;
-    }
-  
-    .projects-grid ul {
-      gap: 0.5rem;
-    }
-    
-    .projects-grid li {
-      min-height: 200px;
-    }
-    
-    .projects-grid article {
-      padding-inline: 0.75rem;
-    }
-    
-    .projects-grid h5 {
-      font-size: 1em;
-    }
-    
-    .projects-grid p {
-      font-size: 13px;
-    }
-  }
 
   @media (max-width: 768px) {
     :root {
@@ -278,16 +249,21 @@
     
     .projects-grid ul {
       height: auto;
+      min-height: min-content;
       gap: 1rem;
     }
     
     .projects-grid li {
-      min-height: 200px;
+      height: auto;
     }
     
     .projects-grid article {
-      padding-inline: 1rem;
-      padding-bottom: 1rem;
+      position: relative;
+      height: auto;
+      margin: 0 0 0rem 0.5rem;
+      padding-inline: .25rem;
+      padding: 8rem .5rem 0rem .5rem;
+      justify-content: flex-start;
     }
 
     .projects-grid h5 {
@@ -295,15 +271,14 @@
       position: static;
       rotate: 0deg;
       width: 100%;
-      top: auto;
-      left: auto;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0rem;
       font-size: 1.1em;
     }
     
     .projects-grid p {
       font-size: 14px;
-      margin-bottom: 2.75rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
     
     .projects-grid a {
@@ -313,11 +288,25 @@
       bottom: auto;
     }
     
-    .projects-grid span {
+    .projects-grid .link-text, .projects-grid .arrow {
       translate: 0;
-      padding-left: 1rem;
+      padding-left: 0rem;
+      margin-left: 0rem;
     }
     
+    .projects-grid .emoji {
+      position: relative;
+      top: 0.4rem;
+      left: -0.25rem;
+      margin-right: 1rem;
+    }
+
+    .projects-grid .card-footer {
+      display: flex;
+      gap: 0rem;
+      margin-top: -6rem;
+    }
+
     .projects-grid img {
       mask: none;
       opacity: 0.3;
@@ -334,10 +323,115 @@
     }
   }
 
-  @media (min-width: 769px) {
+  @media (max-width: 576px) {
     .projects-grid li {
-      min-height: 360px;
+      min-height: 100%;
     }
 
+    .projects-grid article {
+      padding-inline: 1rem;
+      padding: 6.75rem 0.5rem 1rem 0.5rem;
+      justify-content: flex-start;
+    }
+
+    .projects-grid h5 {
+      z-index: 1;
+      position: static;
+      rotate: 0deg;
+      width: 100%;
+      margin-bottom: 0rem;
+      font-size: 1.1em;
+    }
+    
+    .projects-grid p {
+      font-size: 14px;
+      padding-bottom: 1.5rem;
+    }
+    
+    .projects-grid a {
+      position: static;
+      margin-top: 0.5rem;
+      left: 0;
+      bottom: auto;
+    }
+    
+    .projects-grid .card-footer {
+      display: flex;
+      gap: 0rem;
+    }
+
+    .projects-grid .emoji { /*a:is(:focus-visible, :hover) */
+      position: relative;
+      left: .4em;
+      margin-right: 0;
+    }
+
+    .projects-grid .link-text {
+      position: relative;
+      left: 0rem;
+    }
+
+    .projects-grid .arrow {
+      position: relative;
+      left: -1em;
+    }
   }
+
+  @media (max-width: 480px) {
+    h2#projects-heading-1, h2#projects-heading-2, h2#notes-heading, .lines {
+      margin-left: 1rem;
+    }
+
+    .projects-grid {
+      width: 100%;
+    }
+  
+    .projects-grid ul {
+      gap: 0.5rem;
+      width: 100%;
+      margin: 1em 0 1em 1em;
+    }
+    
+    .projects-grid li {
+      min-height: 200px;
+      max-width: 100%;;
+    }
+    
+    .projects-grid article {
+      padding-inline: 0.75rem;
+    }
+
+    .projects-grid h5 {
+      font-size: 1.1em;
+    }
+    
+    .projects-grid p {
+      font-size: 13px;
+      margin-bottom: 1.5rem;
+      padding-right: .25em;
+    }
+
+    .projects-grid .card-footer {
+      display: flex;
+      gap: 0rem;
+    }
+
+    .projects-grid .emoji { /*a:is(:focus-visible, :hover) */
+      position: relative;
+      left: .4em;
+      margin-right: 0;
+    }
+
+    .projects-grid .link-text {
+      position: relative;
+      left: 0rem;
+    }
+
+    .projects-grid .arrow {
+      position: relative;
+      left: -1em;
+    }
+    
+  }
+
 }

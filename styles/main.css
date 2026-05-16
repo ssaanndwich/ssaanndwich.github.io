@@ -41,8 +41,8 @@
     --gap-2: 2rem;
 
     /* Columns */
-    --jumbotron-default: 1.5fr 1fr;
-    --jumbotron-biggun: 2fr 1.75fr;
+    --jumbotron-default: 2.5fr 1fr;
+    --jumbotron-biggun: 3fr 1.25fr;
     --header-columns: 1fr 2fr 1fr;
 
     /* Toggle */
@@ -240,6 +240,10 @@
     a:hover {
         filter: url(#turbulence-filter);
         transition: filter 0.3s ease;
+    }
+
+    #logos {
+        padding-top: 1.7rem;
     }
 }
 
@@ -508,7 +512,7 @@
 
     .jumbotron .bio-logo, .light .jumbotron .bio-logo {
         width: 4rem;
-        max-height: 3rem;
+        max-height: 2.5rem;
     }
 
     .light .bio-logo {
@@ -520,7 +524,7 @@
     }
 
     .jumbotron .right {
-        min-width: 10em;
+        min-width: 12em;
         justify-content: start;
         overflow: auto;
     }
@@ -538,9 +542,13 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: .6rem;
+        gap: 0rem;
         margin-top: 1rem;
         flex-flow: row wrap
+    }
+
+    .right div:has(a) {
+        height: fit-content;
     }
 
     .note-content section p img {
@@ -730,13 +738,13 @@
         }
 
         .jumbotron .left {
-            min-width: 30vw;
-            max-width: 45vw;
+            min-width: 35vw;
+            max-width: 40vw;
         }
 
         .jumbotron .right {
-            min-width: 30vw;
-            max-width: 20vw;
+            min-width: 22vw;
+            max-width: 23vw;
         }
 
         .jumbotron h2 {

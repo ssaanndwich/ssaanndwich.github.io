@@ -658,7 +658,7 @@
 
     /* Responsive Images */
     .note-content img, 
-    .note-content picture img {
+    .note-content picture img, .note-content video {
         width: 100%;
         height: auto;
         border: 1px solid var(--color-iron);
@@ -668,26 +668,26 @@
     }
 
     .light .note-content img,
-    .light .note-content picture img {
+    .light .note-content picture img, .note-content video {
         border: 1px solid var(--color-iron);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .note-content img:hover,
-    .note-content picture img:hover {
+    .note-content picture img:hover, .note-content video:hover {
         transform: scale(1.02);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
     .light .note-content img:hover,
-    .light .note-content picture img:hover {
+    .light .note-content picture img:hover, .light .note-content video:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     }
 
     @media (max-width: 479px) {
         
         .note-content img,
-        .note-content picture img {
+        .note-content picture img, .note-content video {
             border: 1px solid var(--color-iron);
             max-width: 100%;
             margin: 1rem 0;
@@ -696,7 +696,7 @@
 
     @media (min-width: 480px) and (max-width: 768px) {
         .note-content img,
-        .note-content picture img {
+        .note-content picture img, .note-content video {
             border: 1px solid var(--color-iron);
             max-width: 100%;
             margin: 1.5rem auto;
@@ -706,7 +706,7 @@
 
     @media (min-width: 769px) {
         .note-content img,
-        .note-content picture img {
+        .note-content picture img, .note-content video {
             border: 1px solid var(--color-iron);
             max-width: 100%;
             margin: 2rem auto;

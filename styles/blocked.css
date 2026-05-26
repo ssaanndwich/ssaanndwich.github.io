@@ -1,0 +1,127 @@
+@import './main.css';
+
+/* Default */                                                                                                            
+body {                                      
+  --status-color: var(--color-ash);
+}                                                                                                                                   
+                                        
+[data-scenario="notfound"] {                                                                                                        
+  --status-color: var(--color-white);
+}                                                                                                                                   
+                                                                                                                                    
+[data-scenario="scraper"],                                                                                                          
+[data-scenario="bot"] {                                                                                                             
+  --status-color: var(--color-purple); /* forbidden access */                                                                       
+}                                           
+                                                                                                                                    
+[data-scenario="rate"] {  
+  --status-color: var(--color-yellow); 
+}
+                                                                                                                                      
+/* Lift page content above ASCII canvas (z-index: 2) and grain (z-index: 1) */
+.header, #main-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Status element styles */
+h1.code {
+  font-size: var(--size-xxl);
+  margin-bottom: -2rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+h3.icon {
+  padding-top: 2.5rem;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.status-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p.heading {
+  font-size: var(--size-lg);
+  font-weight: 400;
+  margin-bottom: 0rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h4.description {
+  font-size: var(--size-sm);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 48ch;
+}                                                                     
+
+.search-wrap {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="search"] {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-iron);
+  background: var(--color-midnight);
+  color: var(--color-text);
+  font-size: var(--size-xs);
+  font-family: var(--font-family-body);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="search"]:focus {
+  border-color: var(--color-mint);
+}
+
+.light input[type="search"] {
+  background: var(--color-powder);
+  color: var(--color-steel);
+  border-color: var(--color-steel);
+}
+
+/* 769px–1024px: tablet */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    h1.code { font-size: var(--size-xl); }
+  }
+
+  /* 638px–768px: large mobile */
+  @media (min-width: 638px) and (max-width: 768px) {
+    h1.code { font-size: var(--size-xl); }
+    p.heading {
+      font-size: var(--size-md);
+      padding-top: 1rem;
+    }
+  }
+  
+  /* 480px–637px: small mobile */
+  @media (min-width: 480px) and (max-width: 637px) {
+    h1.code { font-size: var(--size-lg); }
+    p.heading {
+      font-size: var(--size-md);
+      padding-top: 1rem;
+    }
+    h4.description { max-width: 100%; }
+  }
+
+  /* ≤479px: extra small */
+  @media (max-width: 479px) {
+    h1.code { font-size: var(--size-lg); }
+    p.heading {
+      font-size: var(--size-md); 
+      padding-top: 1rem;
+    }
+    h4.description { max-width: 100%; }
+    .search-wrap { flex-direction: column; }
+  }
+

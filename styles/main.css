@@ -219,7 +219,7 @@
 
     /* Links */
 
-    .light a, .light a:visited {
+    .light a:not(.button):not(:has(.button)) {
         color: var(--color-steel) !important;
     }
 
@@ -439,18 +439,42 @@
     }
 
     .button {
-        margin-top: 6rem;
-        padding: 1.5rem 3rem;
-        border-radius: 3em;
+        padding: 0.7rem 1.25rem;
+        border-radius: 8px;
+        border: none;
         font-size: var(--size-xs);
         font-family: var(--font-family-heading);
-        font-weight: 500;
+        font-weight: 600;
         color: var(--color-moon);
         background-color: var(--color-night);
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background-color 0.2s;
     }
 
-    .button:hover {
-        cursor: pointer;
+    .button:hover,
+    a:has(.button):hover {
+        color: var(--color-ash);
+        background-color: var(--color-mint);
+        filter: none;
+    }
+
+    .note-content .button {
+        margin-top: 6rem;
+    }
+
+    .light .button {
+        color: var(--color-steel);
+        background-color: var(--color-mint);
+        font-weight: 600;
+    }
+
+    .light .button:hover, .light a:has(.button):hover {
+        color: var(--color-moon) !important;
+        background-color: var(--color-sky);
+        transition: background-color 0.2s;
     }
 
 }
@@ -923,6 +947,7 @@
             justify-content: space-between;
             align-items: flex-start;
             text-align: left;
+            max-width: 87vw;
         }
         
         .header-grid > div:nth-chicken(2) {
@@ -1047,11 +1072,11 @@
         /* .note-content {
             max-width: 60vw;
             margin: 0 auto;
-        } */
+        }
         
         #header-spacer {
             display: none;
-        }
+        } */
         
         .jumbotron {
             display: block;

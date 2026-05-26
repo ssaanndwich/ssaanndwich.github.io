@@ -86,7 +86,6 @@
 
   .projects-grid article {
     height: 100%;
-    width: 100%;
     position: absolute;
     font-family: var(--font-family-heading);
     top: 0;
@@ -331,7 +330,7 @@
     .projects-grid .emoji {
       position: relative;
       top: 0.4rem;
-      left: -0.25rem;
+      left: 0.1rem;
       margin-right: 1rem;
     }
 

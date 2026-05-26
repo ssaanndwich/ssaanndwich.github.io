@@ -4,7 +4,6 @@
          url('../fonts/regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 :root {
@@ -19,7 +18,7 @@
     --color-black: #181818;
     --color-purple: #aa86f5;
     --color-mint: #109b6c;
-    --color-yellow: #FFBF71;
+    --color-yellow: #f39b18e3;
     --color-sky: #43A5DD;
 
     --focus-outline: 3px solid #aa86f5;
@@ -285,7 +284,7 @@
     }
 
     .toggl {
-        font-size: 20%;
+        font-size: 3.2px;
         margin-top: 19em;
         position: relative;
         height: var(--toggleHeight);
@@ -658,7 +657,7 @@
 
     /* Responsive Images */
     .note-content img, 
-    .note-content picture img, .note-content video {
+    .note-content picture img {
         width: 100%;
         height: auto;
         border: 1px solid var(--color-iron);
@@ -668,26 +667,26 @@
     }
 
     .light .note-content img,
-    .light .note-content picture img, .note-content video {
+    .light .note-content picture img {
         border: 1px solid var(--color-iron);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .note-content img:hover,
-    .note-content picture img:hover, .note-content video:hover {
+    .note-content picture img:hover {
         transform: scale(1.02);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
     .light .note-content img:hover,
-    .light .note-content picture img:hover, .light .note-content video:hover {
+    .light .note-content picture img:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     }
 
     @media (max-width: 479px) {
         
         .note-content img,
-        .note-content picture img, .note-content video {
+        .note-content picture img {
             border: 1px solid var(--color-iron);
             max-width: 100%;
             margin: 1rem 0;
@@ -696,7 +695,7 @@
 
     @media (min-width: 480px) and (max-width: 768px) {
         .note-content img,
-        .note-content picture img, .note-content video {
+        .note-content picture img {
             border: 1px solid var(--color-iron);
             max-width: 100%;
             margin: 1.5rem auto;
@@ -706,7 +705,7 @@
 
     @media (min-width: 769px) {
         .note-content img,
-        .note-content picture img, .note-content video {
+        .note-content picture img {
             border: 1px solid var(--color-iron);
             max-width: 100%;
             margin: 2rem auto;

@@ -63,15 +63,15 @@
 
     <!-- Header -->
     <header role="banner" class="header header-grid">
-        <div>
+        <div class="gem-wrap">
             <nav role="navigation" aria-label="Navigation">
                 <ul>
-                    <li><a tabindex="1" href="../index.html"><img src="../imgs/gem.gif" alt="Gem logo"></a></li>
+                    <li><a tabindex="1" href="../index.html"><img class="gem" src="../imgs/gem.gif" alt="Gem logo"></a></li>
                 </ul>
             </nav>
         </div>
         <div id="header-spacer"></div>
-        <div>
+        <div class="toggl-wrap">
             <button tabindex="5" onclick="tdnn()" class="toggl" role="switch" aria-label="Light Dark Mode Toggle">
                 <div class="moon">
                 </div>
@@ -82,8 +82,7 @@
     <!-- Main -->
     <main id="main-content" role="main" aria-label="Main Content">
         <section aria-labelledby="blocked-message">
-            <div>
-                <br><br><br>
+            <div class="status-block">
                 <h4>Error Code</h4>
                 <h1 class="code" id="status-code" aria-hidden="true"></h1>
                 <div class="status-row">
@@ -98,7 +97,6 @@
                 <button class="button" onclick="doSearch()">Search</button>
             </div> -->
         </section>
-
 
         <section>
             <a href="../index.html" class="button home-link">← Return home</a>

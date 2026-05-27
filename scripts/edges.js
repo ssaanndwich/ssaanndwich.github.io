@@ -47,6 +47,6 @@ function doSearch() {
   if (q) location.href = "/?search=" + encodeURIComponent(q);
 }
 
-document.getElementById("q").addEventListener("keydown", e => {
-  if (e.key === "Enter") doSearch();
-});
+// document.getElementById("q").addEventListener("keydown", e => {
+//   if (e.key === "Enter") doSearch();
+// });

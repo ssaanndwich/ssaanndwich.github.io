@@ -5,7 +5,6 @@ const ATLAS_SCALE = 4;                // render atlas at 3x for crisp glyphs
 const size = CELL_SIZE * ATLAS_SCALE; // tight grid
 const ASCII_CHARS = ' .:-+*#%@';      // 9 chars, space → dense
 
-
 class ASCIIBackground {
   constructor(text) {
     this.text   = text;
@@ -52,7 +51,18 @@ class ASCIIBackground {
     this.asciiTexture.magFilter = THREE.NearestFilter;
   }
 
+  // Reads --ascii-wscale / --ascii-hscale from blocked.css so breakpoint
+  // overrides there drive both canvas scale and content spacing together.
+  getFontSize() {
+    const s  = getComputedStyle(document.documentElement);
+    const ws = parseFloat(s.getPropertyValue('--ascii-wscale')) || 0.38;
+    const hs = parseFloat(s.getPropertyValue('--ascii-hscale')) || 0.68;
+    return Math.min(this.width * ws, this.height * hs);
+  }
+
   createTextMask() {
+    const s  = getComputedStyle(document.documentElement);
+    const y  = parseFloat(s.getPropertyValue('--ascii-y')) || 0.5;
     const c   = document.createElement('canvas');
     c.width   = this.width;
     c.height  = this.height;
@@ -60,13 +70,12 @@ class ASCIIBackground {
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, c.width, c.height);
 
-    // Scale font so text fills ~32% of the shorter axis
-    const fontSize = Math.min(this.width * 0.38, this.height * 0.68);
+    const fontSize = this.getFontSize();
     ctx.fillStyle    = 'white';
     ctx.font         = `bold ${fontSize}px monospace`;
     ctx.textAlign    = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(this.text, c.width / 2, c.height / 2);
+    ctx.fillText(this.text, c.width / 2, c.height * y);
 
     if (this.textMask) this.textMask.dispose();
     this.textMask = new THREE.CanvasTexture(c);
@@ -122,7 +131,7 @@ class ASCIIBackground {
           // ── Per-cell life cycle (artefakt wipe) ───────────────────────
           // Each cell has a random phase offset so they flicker independently
           float seed   = rand(cellCoord);
-          float life   = fract(uTime * 0.38 + seed * 8.73);
+          float life   = fract(uTime * 0.22 + seed * 8.73);
 
           float appear = smoothstep(0.0,  0.2,  life);
           float vanish = 1.0 - smoothstep(0.72, 1.0, life);
@@ -140,7 +149,7 @@ class ASCIIBackground {
 
           // ── ASCII char selection ──────────────────────────────────────
           // Fast random tick per cell so chars change while visible
-          float tick    = floor(uTime * 14.0 + seed * 9.0);
+          float tick    = floor(uTime * 5.5 + seed * 9.0);
           float charIdx = floor(rand(cellCoord + tick) * uCharCount);
           vec2  atlasUV = vec2((charIdx + cellUV.x) / uCharCount, cellUV.y);
           float glyph   = texture2D(uAsciiTex, atlasUV).r;
@@ -167,7 +176,7 @@ class ASCIIBackground {
   addEventListeners() {
     new MutationObserver(() => {
       const light = document.body.classList.contains('light');
-      this.mesh.material.uniforms.uColor.value.setScalar(light ? 0.5 : 1.0);
+      this.mesh.material.uniforms.uColor.value.setScalar(light ? 0.10 : 1.0);
     }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
     window.addEventListener('mousemove', e => {

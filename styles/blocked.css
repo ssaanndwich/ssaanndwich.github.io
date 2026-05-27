@@ -1,8 +1,23 @@
 @import './main.css';
 
-/* Default */                                                                                                            
-body {                                      
-  --status-color: var(--color-ash);
+/* ─── Responsive tokens ──────────────────────────────────────────────────────                             
+ +   --ascii-wscale / --ascii-hscale: fraction of viewport axes used for the                                  
+ +   Three.js ASCII canvas font. Consumed by getFontSize() in gl-bg.js.                                       
+ +   --blocked-top: padding-top on .status-block.                             
+ +   Tune these values per breakpoint; canvas scale and content spacing stay in sync.                         
+ +   ─────────────────────────────────────────────────────────────────────────── */                           
+
+:root {                                                                                                     
+  --ascii-wscale: 0.38;                                                                                     
+  --ascii-hscale: 0.68;                                                                                     
+  --blocked-top:  6rem;  
+  --ascii-y:      0.5;    /* 0.5 = center, 0.35 = upper third */                                                                            
+}
+                                                                                                           
+
+/* Default */                                                                                               
+body {                             
+--status-color: var(--color-ash);
 }                                                                                                                                   
                                         
 [data-scenario="notfound"] {                                                                                                        
@@ -22,6 +37,10 @@ body {
 .header, #main-content {
   position: relative;
   z-index: 3;
+}
+
+.status-block {
+  padding-top: var(--blocked-top);
 }
 
 /* Status element styles */
@@ -59,7 +78,7 @@ h4.description {
   font-weight: 300;
   line-height: 1.6;
   max-width: 48ch;
-}                                                                     
+}
 
 .search-wrap {
   margin-top: 2.5rem;
@@ -90,38 +109,84 @@ input[type="search"]:focus {
   border-color: var(--color-steel);
 }
 
-/* 769px–1024px: tablet */
+/* ≥ 1025px - 2048px: Medium monitor */
+  @media (min-width: 1025px) and (max-width: 2048px) {
+    :root {
+      --ascii-wscale: 0.3;
+      --ascii-hscale: 0.64;
+      --blocked-top:  11vh;
+      --ascii-y:      0.45;
+    }
+
+    h1.code { font-size: var(--size-xl); }
+  }
+
+/* 769px – 1024px: Large mobile, small monitor */
   @media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+      --ascii-wscale: 0.38;
+      --ascii-hscale: 0.64;
+      --blocked-top:  13rem;
+      --ascii-y:      0.47;
+    }
+
     h1.code { font-size: var(--size-xl); }
   }
 
-  /* 638px–768px: large mobile */
+  /* 638px – 768px: Large mobile */
   @media (min-width: 638px) and (max-width: 768px) {
+    :root {
+      --ascii-wscale: 0.45;
+      --ascii-hscale: 0.60;
+      --blocked-top:  5rem;
+      --ascii-y:      0.48;
+    }
+
     h1.code { font-size: var(--size-xl); }
+
     p.heading {
       font-size: var(--size-md);
       padding-top: 1rem;
     }
   }
-  
-  /* 480px–637px: small mobile */
+
+  /* 480px – 637px: Small mobile */
   @media (min-width: 480px) and (max-width: 637px) {
+    :root {
+      --ascii-wscale: 0.6;
+      --ascii-hscale: 0.5;
+      --blocked-top:  35vmin;
+      --ascii-y:       0.45;
+    }
+
     h1.code { font-size: var(--size-lg); }
+
     p.heading {
       font-size: var(--size-md);
       padding-top: 1rem;
     }
+
     h4.description { max-width: 100%; }
   }
 
-  /* ≤479px: extra small */
+  /* ≤ 479px: Extra Small */
   @media (max-width: 479px) {
+    :root {
+      --ascii-wscale: 0.5;
+      --ascii-hscale: 0.9;
+      --blocked-top:  45vmin;
+      --ascii-y:       0.45;
+    }
+
     h1.code { font-size: var(--size-lg); }
+
     p.heading {
-      font-size: var(--size-md); 
+      font-size: var(--size-md);
       padding-top: 1rem;
     }
+    
     h4.description { max-width: 100%; }
+
     .search-wrap { flex-direction: column; }
   }
 

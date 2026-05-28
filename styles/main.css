@@ -287,11 +287,6 @@
         position: relative;
     }
 
-    .gem {
-        left: 0;
-        position: absolute;
-    }
-
     .toggl {
         font-size: 3.2px;
         margin-top: 19em;
@@ -385,10 +380,10 @@
         display: inline-block;
     }
 
-    nav>ul a img {
+    nav>ul a img, .gem {
         vertical-align: middle;
         width: 5rem;
-        margin-left: -2.8rem;
+        margin-left: -2rem;
     }
 
     /* Notes */
@@ -424,10 +419,10 @@
     }
 
     @media (hover) and (pointer: fine) {
-        nav>ul a:hover {
-            --font-weight: 800;
+        nav>ul a:hover .gem {
             filter: url(#turbulence-filter);
             transition: filter 0.3s ease;
+            margin-left: -2rem;
         }
     }
 }

@@ -5,10 +5,18 @@ function tdnn() {
   localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
 }
 
-(function () {
+function applyTheme() {
   if (localStorage.getItem("theme") === "light") {
-    document.getElementsByClassName("moon")[0].classList.add("sun");
-    document.getElementsByClassName("toggl")[0].classList.add("day");
     document.body.classList.add("light");
+    var moon = document.getElementsByClassName("moon")[0];
+    var toggl = document.getElementsByClassName("toggl")[0];
+    if (moon) moon.classList.add("sun");
+    if (toggl) toggl.classList.add("day");
   }
-})();
+}
+
+applyTheme();
+
+window.addEventListener("pageshow", function (e) {
+  if (e.persisted) applyTheme();
+});

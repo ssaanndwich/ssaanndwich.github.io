@@ -349,7 +349,7 @@
     nav {
         font-family: var(--font-family-heading);
         padding-block: var(--size-md);
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         display: flex;
         position: relative;

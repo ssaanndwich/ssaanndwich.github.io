@@ -83,10 +83,6 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .light .founts-sticky {
-        background: var(--color-powder);
-    }
-
     .founts-sticky h2 {
         margin: 0;
         font-size: var(--size-xl);
@@ -267,10 +263,6 @@
         align-self: flex-start; /* Prevent it from stretching to full height */
     }
 
-    .light .founts-sticky {
-        background: var(--color-powder);
-    }
-
     @supports (position: sticky) {
         .founts-sticky, .light .founts-sticky {
             position: sticky;
@@ -313,10 +305,6 @@
         padding: 0;
         height: fit-content; /* Ensure it only takes the height it needs */
         align-self: flex-start;
-    }
-
-    .light .founts-sticky {
-        background: var(--color-powder);
     }
 
     .gallery-2 .founts-trio-row img {

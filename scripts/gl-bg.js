@@ -87,7 +87,7 @@ class ASCIIBackground {
     const geo = new THREE.PlaneGeometry(2, 2);
     const mat = new THREE.ShaderMaterial({
       uniforms: {
-        uColor: { value: new THREE.Vector3(1, 1, 1) },
+        uColor: { value: new THREE.Vector3().setScalar(document.body.classList.contains('light') ? 0.10 : 1.0) },
         uTime:       { value: 0 },
         uResolution: { value: new THREE.Vector2(this.width, this.height) },
         uCellSize:   { value: CELL_SIZE },

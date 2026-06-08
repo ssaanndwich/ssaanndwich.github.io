@@ -828,7 +828,28 @@
         }
     }
 
-    @media (min-width: 1025px) and (max-width: 3024px) {
+    @media (min-width: 2049px) and (max-width: 3024px) {
+        header {
+            max-width: 55vw;
+            margin-bottom: 6rem;
+        }
+
+        main, footer, .note-content {
+            max-width: 55vw;
+            margin: 0 auto;
+        }
+
+        .jumbotron {
+            grid-template-columns: var(--jumbotron-biggun);
+        }
+
+        .jumbotron .left {
+            min-width: 40vw;
+            max-width: 46vw;
+        }
+    }
+
+    @media (min-width: 1025px) and (max-width: 2048px) {
         header {
             max-width: 65em;
             margin-bottom: 6rem;
@@ -845,13 +866,12 @@
 
         .jumbotron .left {
             min-width: 23vw;
-            max-width: 26vw;
+            max-width: 60vw;
         }
 
     }
 
-
-    /* Tablet breakpoint - Keep sticky behavior and two-column layout */
+    /* Tablet breakpoint */
     @media (min-width: 769px) and (max-width: 1024px) {
         main, header, footer {
             max-width: 90vw;

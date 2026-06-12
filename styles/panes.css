@@ -237,6 +237,28 @@
 /* Responsive design for projects grid */
 @layer media {
 
+  @media (min-width: 2049px) {
+    .projects-grid article > div {
+    position: absolute;
+    bottom: 1.3rem;
+    left: calc(var(--base) * 0.5 - 9px);
+    }
+
+    .projects-grid [data-active='true'] :is(a, p, .project-footer) {
+      position: relative;
+      transition-delay: var(--delay-speed);
+      z-index: 1;
+    }
+
+    .projects-grid .link-text {
+      position: absolute;
+      padding: .1em 1em;
+      text-decoration: underline;
+      text-decoration-color: light-dark(var(--color-midnight), var(--color-white));
+      text-underline-offset: 4px;
+    }
+  }
+
   @media (min-width: 769px) and (max-width: 2048px) {
 
     .projects-grid li {

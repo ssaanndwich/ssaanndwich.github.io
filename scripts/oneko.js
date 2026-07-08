@@ -5,8 +5,6 @@
     window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
-  if (isReducedMotion) return;
-
   const nekoEl = document.createElement("div");
 
   let nekoPosX = 32;
@@ -84,16 +82,13 @@
     ],
   };
 
-  function init() {
+  function createNekoEl() {
     nekoEl.id = "oneko";
     nekoEl.ariaHidden = true;
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
-    nekoEl.style.position = "fixed";
     nekoEl.style.pointerEvents = "none";
     nekoEl.style.imageRendering = "pixelated";
-    nekoEl.style.left = `${nekoPosX - 16}px`;
-    nekoEl.style.top = `${nekoPosY - 16}px`;
     nekoEl.style.zIndex = 2147483647;
 
     let nekoFile = "imgs/oneko.gif"
@@ -105,6 +100,30 @@
 
     document.body.appendChild(nekoEl);
     document.getElementById("oneko").style.backgroundColor = "transparent";
+  }
+
+  function initSleepingOneko() {
+    createNekoEl();
+    nekoEl.style.position = "absolute";
+
+    const footer = document.querySelector("footer");
+    const toggl = document.querySelector(".toggl");
+    nekoEl.style.top = `${footer.getBoundingClientRect().top + window.scrollY - 32}px`;
+    nekoEl.style.left = `${toggl.getBoundingClientRect().right + window.scrollX - 32}px`;
+
+    let sleepingFrame = 0;
+    setSprite("sleeping", sleepingFrame);
+    setInterval(() => {
+      sleepingFrame = (sleepingFrame + 1) % spriteSets.sleeping.length;
+      setSprite("sleeping", sleepingFrame);
+    }, 750);
+  }
+
+  function init() {
+    createNekoEl();
+    nekoEl.style.position = "fixed";
+    nekoEl.style.left = `${nekoPosX - 16}px`;
+    nekoEl.style.top = `${nekoPosY - 16}px`;
 
     document.addEventListener("mousemove", function (event) {
       mousePosX = event.clientX;
@@ -236,5 +255,9 @@
     nekoEl.style.top = `${nekoPosY - 16}px`;
   }
 
-  init();
+  if (isReducedMotion) {
+    initSleepingOneko();
+  } else {
+    init();
+  }
 })();

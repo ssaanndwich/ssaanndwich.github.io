@@ -419,6 +419,17 @@
         background-color: var(--color-steel);
     }
 
+    /* Accessibility: Reduced Motion Preference */
+    @media (prefers-reduced-motion: reduce) {
+        .grain {
+            animation: none;    /* static texture stays, flicker stops */
+        }
+
+        * {
+            transition-duration: 0.01ms;  /* or scope this more surgically */
+        }
+    }
+
     @media (hover) and (pointer: fine) {
         nav>ul a:hover .gem {
             filter: url(#turbulence-filter);

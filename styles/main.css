@@ -826,9 +826,11 @@
         .lines li::before {
             content: "";
             position: absolute;
-            left: calc(-6 * var(--viewport-offset, 2rem));
+            /* body is 75vw centered, main is 35vw centered within body:
+               (100vw-75vw)/2 + (75vw-35vw)/2 = 32.5vw to the viewport edge */
+            left: calc(-32.5vw);
             top: 0.9rem;
-            width: 10rem;
+            width: calc(32.5vw - 2rem);
             height: 0.1rem;
             background-color: var(--color-ash);
             display: block;
@@ -857,6 +859,13 @@
         .jumbotron .left {
             min-width: 40vw;
             max-width: 46vw;
+        }
+
+        /* main is 55vw centered, body has no max-width here:
+           (100vw-55vw)/2 = 22.5vw to the viewport edge */
+        .lines li::before {
+            left: calc(-22.5vw);
+            width: calc(22.5vw - 2rem);
         }
     }
 

@@ -203,10 +203,14 @@
         color: var(--color-black);
     }
 
+    #welcome-heading {
+        line-height: 1em;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-family-heading);
         margin: 0 0 1rem 0;
-        line-height: 1.3;
+        line-height: 1.2em;
     }
 
     p {
@@ -441,6 +445,12 @@
 
 /* Components: Cards, Buttons, Dialogs */
 @layer components {
+    #divider {
+        display: inline-block;
+        font-size: clamp(0.65rem, 3vw, 1rem);
+        white-space: nowrap;
+    }
+
     /* Name with SVG filter */
     #name-logo {
         filter: url(#name-filter);
@@ -566,7 +576,8 @@
     .jumbotron .right {
         min-width: 12em;
         justify-content: start;
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .flex {

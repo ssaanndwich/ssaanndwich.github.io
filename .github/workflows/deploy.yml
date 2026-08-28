@@ -23,10 +23,8 @@ jobs:
 
       - name: Install, build, and upload
         uses: withastro/action@v3
-            - name: Install, build, and upload
-              uses: withastro/action@v3
-              with:
-                node-version: 22
+        with:
+          node-version: 22
         # This action handles Node setup, npm install, `astro build`,
         # and packaging ./dist as a Pages artifact in one step.
 

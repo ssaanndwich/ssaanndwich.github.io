@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import NoteLayout from '../../layouts/NoteLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes', ({ data }) => !data.draft);
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+
+// Word count / reading time from the raw MDX source (strip tags/frontmatter-ish
+// markup so JSX attributes don't get counted as "words").
+const plainText = note.body
+  ?.replace(/<[^>]+>/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim() ?? '';
+const wordCount = plainText.length ? plainText.split(' ').length : 0;
+---
+
+<NoteLayout
+  title={note.data.title}
+  subtitle={note.data.subtitle}
+  date={note.data.date}
+  updated={note.data.updated}
+  showUpdated={note.data.showUpdated}
+  tags={note.data.tags}
+  wordCount={wordCount}
+>
+  <Content />
+</NoteLayout>

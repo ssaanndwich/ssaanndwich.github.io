@@ -1,0 +1,200 @@
+---
+// BaseLayout.astro
+// Shared shell for every page: head/meta, header+nav, SVG filters, footer,
+// grain texture, and the scripts every page needs. Ported 1:1 from the
+// existing index.html / notes/*.html - no visual changes.
+//
+// Nav links are now root-relative ("/", "/#notes-heading", "/founts"), which
+// means they work the same from any page instead of needing the ../ prefixes
+// the old per-page HTML had to carry.
+
+interface Props {
+  title: string;
+  description?: string;
+  mainId?: string;
+  mainClass?: string;
+  mainRole?: string;
+  mainAriaLabel?: string;
+  isHome?: boolean;
+}
+
+const {
+  title,
+  description = "Technical Product UX Designer with 10 years of experience in corporate, agency, startup teams. >5.5 years leading and collaborating with design, cross-functional leads. Creative, pragmatic, agile, experimental superpowers. Kindle Page Flip Inventor. Fulbright Scholar Semi-Finalist. Vaccinated karaoke fan for life.",
+  mainId = "main-content",
+  mainClass = "",
+  mainRole = "main",
+  mainAriaLabel = "Main Content",
+  isHome = false,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZHHWMLZMXM" type="text/javascript"></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZHHWMLZMXM');
+    </script>
+    {isHome && <audio type="audio/mp3" id="link-hover-audio" src="/audio/boop.mp3" preload="auto"></audio>}
+    <title>{title}</title>
+    <!-- Favicons -->
+    <link rel="icon" href="/imgs/favicons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/imgs/favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicons/apple-touch-icon.png" type="image/png">
+    <link rel="shortcut icon" href="/imgs/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/imgs/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/svg" href="/imgs/favicons/prism_144x144.svg" media="(prefers-color-scheme: light)" sizes="144x144">
+    <link rel="icon" type="image/svg" href="/imgs/favicons/prism_144x144.svg" media="(prefers-color-scheme: dark)" sizes="144x144">
+    <link rel="icon" type="image/svg" href="/imgs/favicons/prism_96x96.svg" media="(prefers-color-scheme: light)" sizes="96x96">
+    <link rel="icon" type="image/svg" href="/imgs/favicons/prism_96x96.svg" media="(prefers-color-scheme: dark)" sizes="96x96">
+    <link rel="icon" type="image/svg" href="/imgs/favicons/prism_48x48.svg" media="(prefers-color-scheme: light)" sizes="48x48">
+    <link rel="icon" type="image/svg" href="/imgs/favicons/prism_48x48.svg" media="(prefers-color-scheme: dark)" sizes="48x48">
+    <!-- Meta and Social -->
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#211A25">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#E4E4E4">
+    <meta name="description" content={description}>
+    <link rel="canonical" href="https://sancheng.xyz">
+    <meta property="og:title" content="San Cheng - Product Designer, Builder, Artist">
+    <meta property="og:description" content="San Cheng's Portfolio">
+    <meta property="og:url" content="https://sancheng.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="San Cheng">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="San Cheng - Product Designer, Builder, Artist">
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:url" content="https://sancheng.xyz">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="630">
+    <meta name="twitter:image:alt" content="San Cheng">
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/panes.css">
+    <slot name="head" />
+</head>
+<body>
+    <!-- SVG Filter Definitions -->
+    <svg class="svg-filters-1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="turbulence-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.2" numOctaves="4" result="noise">
+                    <animate attributeName="baseFrequency" values="0.01 0.2;0.02 0.25;0.015 0.22;0.01 0.2" dur="2s" repeatCount="indefinite"></animate>
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="30">
+                    <animate attributeName="scale" values="30;35;25;30" dur="1.5s" repeatCount="indefinite"></animate>
+                </feDisplacementMap>
+            </filter>
+        </defs>
+    </svg>
+
+    {isHome && (
+      <svg class="svg-filters-2" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="name-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0 0" result="noise">
+                    <animate attributeName="baseFrequency"
+                             values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0.02 6;0.015 5.5;0.01 5;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0.01 4;0.02 5;0 0;0 0;0 0;0 0;0 0;0 0;0 0"
+                             dur="8s"
+                             repeatCount="indefinite"></animate>
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="0">
+                    <animate attributeName="scale"
+                             values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;60;40;50;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;30;45;35;0;0;0;0;0;0;0"
+                             dur="8s"
+                             repeatCount="indefinite"></animate>
+                </feDisplacementMap>
+            </filter>
+        </defs>
+      </svg>
+    )}
+
+    <!-- Header -->
+    <header role="banner" class="header header-grid">
+        <div>
+            <nav role="navigation" aria-label="Navigation">
+                <ul>
+                    <li><a tabindex="1" href="/"><img src="/imgs/gem.gif" alt="Gem logo"></a></li>
+                    <li><a tabindex="2" href="/#projects-heading-1">Design</a></li>
+                    <li><a tabindex="3" href="/notes">Notes</a></li>
+                    <li><a tabindex="4" href="/founts">Founts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="header-spacer"></div>
+        <div>
+            <button tabindex="5" onclick="tdnn()" class="toggl" role="switch" aria-label="Light Dark Mode Toggle">
+                <div class="moon"></div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id={mainId || undefined} role={mainRole} aria-label={mainAriaLabel} class={mainClass}>
+        <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer role="footer navigation" class="footer-grid" aria-label="Footer Navigation">
+        <ul>
+            <li><a href="/colophon">Colophon &#x270E;</a></li>
+            <li><a href="https://linkedin.com/in/ssaann" target="_blank">LinkedIn <span class="arrow"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5935 5.00098V13.5664H10.2596V8.72949L4.1248 14.8643L2.40605 13.1455L8.22245 7.33008H4.02714V5.00098H10.2596V5L12.5935 5.00098Z" fill="currentColor"></path></svg>
+                                </span></a></li>
+            <li><a href="https://github.com/ssaanndwich" target="_blank">GitHub <span class="arrow"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5935 5.00098V13.5664H10.2596V8.72949L4.1248 14.8643L2.40605 13.1455L8.22245 7.33008H4.02714V5.00098H10.2596V5L12.5935 5.00098Z" fill="currentColor"></path></svg>
+                                </span></a></li>
+            <li><a href="https://drive.google.com/file/d/1Ugbpw9Hbo3UHLWpjYvaYwliQrLTi3axB/view?usp=sharing" target="_blank">Resume <span class="arrow"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5935 5.00098V13.5664H10.2596V8.72949L4.1248 14.8643L2.40605 13.1455L8.22245 7.33008H4.02714V5.00098H10.2596V5L12.5935 5.00098Z" fill="currentColor"></path></svg>
+                                </span></a></li>
+        </ul>
+    </footer>
+
+    <!-- Textured Background -->
+    <div class="grain"></div>
+
+    <!-- Scripts -->
+    {isHome && <script is:inline src="/scripts/oneko.js"></script>}
+    <script is:inline src="/scripts/toggl.js"></script>
+    {isHome && <script is:inline src="/scripts/panes.js"></script>}
+
+    {isHome && (
+      <script is:inline>
+        // Play audio on link hover with autoplay policy handling
+        const hoverAudio = document.getElementById('link-hover-audio');
+        let audioEnabled = false;
+
+        function enableAudio() {
+          if (!audioEnabled && hoverAudio) {
+            hoverAudio.play().then(() => {
+              hoverAudio.pause();
+              hoverAudio.currentTime = 0;
+              audioEnabled = true;
+            }).catch(() => {});
+          }
+        }
+
+        ['click', 'touchstart', 'keydown'].forEach(event => {
+          document.addEventListener(event, enableAudio, { once: true });
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('mouseenter', () => {
+            if (audioEnabled && hoverAudio) {
+              hoverAudio.currentTime = 0;
+              hoverAudio.play().catch(() => {});
+            }
+          });
+        });
+      </script>
+    )}
+</body>
+</html>

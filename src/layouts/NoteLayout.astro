@@ -1,0 +1,53 @@
+---
+// NoteLayout.astro
+// Wraps BaseLayout for a single note. Keeps the original <sub>date</sub> /
+// <h1> / <h2> pattern, and adds a small metadata row (tags, word count,
+// reading time, and an optional "updated" date) that didn't exist before.
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  date: Date;
+  updated?: Date;
+  showUpdated?: boolean;
+  tags: string[];
+  wordCount: number;
+  readingTime: number;
+}
+
+const { title, subtitle, date, updated, showUpdated, tags, wordCount } = Astro.props;
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+}
+---
+
+<BaseLayout
+  title={`${title} / San Cheng`}
+  mainId=""
+  mainClass="note-content"
+  mainRole="note content"
+  mainAriaLabel="Note Content"
+>
+  <section aria-labelledby="note-heading" aria-label="Note">
+    <sub>
+      {formatDate(date)}
+      {showUpdated && updated && <span class="updated"> (updated {formatDate(updated)})</span>}
+    </sub>
+    <br><br>
+    <h1 id="note-heading">{title}</h1>
+    {subtitle && <h2 set:html={subtitle} />}
+    <p class="note-meta">
+      {tags.map((tag) => <a href={`/notes?tag=${encodeURIComponent(tag)}`} class="tag-pill">{tag}</a>)}
+      <span class="meta-sep">&middot;</span>
+      <span>{wordCount.toLocaleString()} words</span>
+    </p>
+  </section>
+
+  <slot />
+
+  <section>
+    <a href="/notes"><button class="button">&larr; Return to Notes</button></a>
+  </section>
+</BaseLayout>

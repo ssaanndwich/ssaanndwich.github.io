@@ -47,7 +47,7 @@ function formatDate(d: Date) {
 
 <BaseLayout title="Notes / San Cheng" mainClass="notes-archive">
   <section aria-labelledby="notes-archive-heading">
-    <h2 id="notes-archive-heading">Notes</h2>
+    <h1 id="notes-archive-heading">Notes</h1>
 
     {tags.length > 0 && (
       <div class="tag-filters" role="group" aria-label="Filter notes by tag">
@@ -62,7 +62,7 @@ function formatDate(d: Date) {
 
     {years.map((year) => (
       <div class="year-group" data-year={year}>
-        <h3 class="year-heading">{year}</h3>
+        <h2 class="year-heading">{year}</h2>
         <ul class="lines">
           {byYear.get(year)!.map((note) => (
             <li data-tags={note.tags.join(',')}>

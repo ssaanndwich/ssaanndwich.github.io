@@ -1,8 +1,8 @@
 # Portfolio Site  
 
 ## Desktop & Mobile Previews
-![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mvp_preview.gif)
-<img src="https://github.com/ssaanndwich/ssaanndwich.github.io/blob/main/vids/mobile_preview.gif" height="466px" alt="Preview of mobile">
+![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/7476527db2c909a81d70fd59613c25f50e6fc4d5/vids/mvp_preview.gif)
+![Preview of mobile](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/7476527db2c909a81d70fd59613c25f50e6fc4d5/vids/mobile_preview.gif)
 
 ## Status
 This project is undergoing minor tweaks since its launch in September 2025.

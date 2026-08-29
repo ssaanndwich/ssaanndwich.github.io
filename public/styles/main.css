@@ -1209,6 +1209,11 @@
             gap: var(--gap-2);
         }
         
+        .jumbotron-founts {
+            grid-template-columns: var(--jumbotron-founts);
+            margin: -23em auto 11em auto;
+        }
+
         /* Flex containers become vertical
         .flex-container {
             flex-direction: column;
@@ -1297,7 +1302,6 @@
         
         .jumbotron {
             display: block;
-            margin: auto;
             width: 100%;
         }
         

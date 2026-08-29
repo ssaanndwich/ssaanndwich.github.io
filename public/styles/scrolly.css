@@ -157,7 +157,7 @@
     }
 
     .video-container {
-        display: block;
+        display: flex;
     }
 
     .light .jumbotron-founts {
@@ -179,7 +179,7 @@
     .video-container {
         grid-template-columns: var(--article-grid-2); /* 1fr */
     }
-
+    
     .founts-duo-row > img, .founts-duo-row > video {
         border-radius: .5em;
     }

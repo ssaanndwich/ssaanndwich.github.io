@@ -159,6 +159,11 @@
     .video-container {
         display: block;
     }
+
+    .light .jumbotron-founts {
+        color: var(--color-white);
+    }
+
 }
 
 /* Mobile breakpoint - Only disable sticky on small screens */

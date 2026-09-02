@@ -1,4 +1,4 @@
-# Portfolio Site  
+# Website
 
 ## Desktop & Mobile Previews
 ![Preview of mvp](https://github.com/ssaanndwich/ssaanndwich.github.io/blob/7476527db2c909a81d70fd59613c25f50e6fc4d5/vids/mvp_preview.gif)

@@ -137,6 +137,11 @@
         outline: none;
     }
 
+    hr {
+        height: 0.1rem;
+        background-color: var(--color-ash);
+    }
+
     /* Typography */
     h1 {
         font-size: var(--size-xxl);
@@ -430,41 +435,76 @@
 
     /* Dark styles for Astro build */
 
-    .tag-filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
+    .tag-carousel {
+        position: relative;
         margin-bottom: 2.5rem;
     }
 
-    .tag-pill {
-        text-decoration: none;
-        font-family: var(--font-family-body);
-        font-size: var(--size-xs);
-        padding: 0.35rem 0.9rem;
-        border-radius: 999px;
-        border: 1px solid var(--color-alu);
-        background: transparent;
-        color: var(--color-text);
-        cursor: pointer;
-        transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+    .tag-filters {
+        padding-block: 0.25rem;
+        margin-block: -0.25rem;
+        display: flex;
+        gap: var(--gap-1);
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
     }
 
-    .tag-pill:hover {
-        border-color: var(--color-purple);
-        color: var(--color-purple);
+    .tag-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tag-pill {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.15rem;
+        padding: 0.5rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-family-body);
+        font-size: var(--size-xs);
+        color: var(--color-text);
+    }
+
+    .tag-pill img {
+        width: 2rem;
+        height: 3rem;
+        object-fit: contain;
+        border-radius: 0.5rem;
     }
 
     .tag-pill .count {
-        border-color: var(--color-purple);
-        color: var(--color-iron);
-        margin-left: 0.15rem;
+        font-size: var(--size-xs);
+        color: var(--color-alu);
     }
+
+    .tag-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background: var(--color-midnight);
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        color: var(--color-text);
+        font-size: var(--size-xs);
+        line-height: 1;
+    }
+
+    .tag-arrow[data-dir="-1"] { left: 0; }
+    .tag-arrow[data-dir="1"] { right: 0; }
 
     .tag-pill.active {
         color: var(--color-black);
         background: var(--color-purple);
         border-color: var(--color-purple);
+        border-radius: 1rem;
     }
 
     .tag-pill.active .count {
@@ -479,6 +519,13 @@
 
     .tag-pill.active:hover .count {
         color: var(--color-purple);
+    }
+
+
+    .tag-pill:hover {
+        color: var(--color-purple);
+        border: 1px solid var(--color-purple);
+        border-radius: 1rem;
     }
 
     .year-group:first-of-type .year-heading {
@@ -536,10 +583,19 @@
         color: var(--color-purple);
     }
 
-    /* Light styles for Astro build */
+    /* Light styles for Astro build */    
+    .light .tag-arrow {
+        background: var(--color-powder);
+        color: var(--color-black);
+    }
+
     .light .tag-pill {
         color: var(--color-steel);
         border-color: var(--color-alu);
+    }
+
+    .light .tag-pill img {
+        filter: invert(1);
     }
 
     .light .tag-pill.active {
@@ -551,6 +607,7 @@
     .light .tag-pill.active:hover {
         color: var(--color-mint);
         border: 1px solid var(--color-mint);
+        border-radius: 1rem;
         background: transparent;
     }
 

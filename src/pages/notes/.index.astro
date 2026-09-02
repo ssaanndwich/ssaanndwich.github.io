@@ -47,29 +47,15 @@ function formatDate(d: Date) {
 
 <BaseLayout title="Notes / San Cheng">
   <section aria-labelledby="notes-heading">
-    <h1 id="notes-heading">Notes</h1>
+    <h2 id="notes-heading">Notes</h2>
 
     {tags.length > 0 && (
-      <div class="tag-carousel">
-          <div class="tag-carousel">
-            <button type="button" class="tag-arrow" data-dir="-1" tabindex="6" aria-label="Scroll tags left" hidden>&#9668;</button>
-            <div class="tag-filters" tabindex="-1" role="group" aria-label="Filter notes by tag">
-              <button type="button" class="tag-pill active" data-tag="" tabindex="7">
-                <img src="/public/imgs/icons/all.svg" alt="All" />
-                <span class="tag-label">All</span>
-                <span class="count">{notes.length}</span>
-              </button>
-              {tags.map(([tag, count], i) => (
-                <button type="button" class="tag-pill" data-tag={tag} tabindex={8 + i}>
-                  <img src={`/public/imgs/icons/${tag}.svg`} alt="" />
-                  <span class="tag-label">{tag}</span>
-                  <span class="count">{count}</span>
-                </button>
-              ))}
-            </div>
-            <button type="button" class="tag-arrow" data-dir="1" tabindex={8 + tags.length} aria-label="Scroll tags right" hidden>&#9654;</button>
-          </div>
-        </div>
+      <div class="tag-filters" role="group" aria-label="Filter notes by tag">
+        <button type="button" class="tag-pill active" data-tag="">All <span class="count">{notes.length}</span></button>
+        {tags.map(([tag, count]) => (
+          <button type="button" class="tag-pill" data-tag={tag}>{tag} <span class="count">{count}</span></button>
+        ))}
+      </div>
     )}
 
     <p class="empty-state" hidden>No notes match that tag yet.</p>
@@ -103,6 +89,7 @@ function formatDate(d: Date) {
   const initialTag = params.get('tag') ?? '';
 
   const pills = document.querySelectorAll<HTMLButtonElement>('.tag-pill');
+  const rows = document.querySelectorAll<HTMLLIElement>('.lines li');
   const yearGroups = document.querySelectorAll<HTMLDivElement>('.year-group');
   const emptyState = document.querySelector<HTMLParagraphElement>('.empty-state');
 
@@ -133,40 +120,8 @@ function formatDate(d: Date) {
   }
 
   pills.forEach((pill) => {
-    pill.addEventListener('click', (e) => {
-      const btn = e.currentTarget as HTMLButtonElement;
-      applyFilter(btn.dataset.tag ?? '');
-    });
+    pill.addEventListener('click', () => applyFilter(pill.dataset.tag ?? ''));
   });
 
   if (initialTag) applyFilter(initialTag);
-
-  const rail = document.querySelector<HTMLDivElement>('.tag-filters');
-  const arrows = document.querySelectorAll<HTMLButtonElement>('.tag-arrow');
-
-  function updateArrows() {
-    if (!rail) return;
-    const max = rail.scrollWidth - rail.clientWidth;
-    arrows.forEach((a) => {
-      const dir = Number(a.dataset.dir);
-      const shouldHide = max <= 1 || (dir < 0 ? rail.scrollLeft <= 0 : rail.scrollLeft >= max - 1);
-      if (shouldHide && document.activeElement === a) rail.focus();
-      a.hidden = shouldHide;
-    });
-  }
-
-  arrows.forEach((a) => {
-    a.addEventListener('click', () => {
-      if (!rail) return;
-      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      rail.scrollBy({
-        left: Number(a.dataset.dir) * rail.clientWidth * 0.8,
-        behavior: reduceMotion ? 'auto' : 'smooth',
-      });
-    });
-  });
-
-  rail?.addEventListener('scroll', updateArrows);
-  window.addEventListener('resize', updateArrows);
-  updateArrows();
 </script>

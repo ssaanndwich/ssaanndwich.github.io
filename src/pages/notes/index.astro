@@ -45,15 +45,9 @@ function formatDate(d: Date) {
 }
 ---
 
-<<<<<<< HEAD
 <BaseLayout title="Notes / San Cheng">
   <section aria-labelledby="notes-heading">
     <h1 id="notes-heading">Notes</h1>
-=======
-<BaseLayout title="Notes / San Cheng" mainClass="notes-archive">
-  <section aria-labelledby="notes-archive-heading">
-    <h1 id="notes-archive-heading">Notes</h1>
->>>>>>> b357a0776cbae73d5a68136ee963818685f0788d
 
     {tags.length > 0 && (
       <div class="tag-carousel">
@@ -61,13 +55,13 @@ function formatDate(d: Date) {
             <button type="button" class="tag-arrow" data-dir="-1" tabindex="6" aria-label="Scroll tags left" hidden>&#9668;</button>
             <div class="tag-filters" tabindex="-1" role="group" aria-label="Filter notes by tag">
               <button type="button" class="tag-pill active" data-tag="" tabindex="7">
-                <img src="/public/imgs/icons/all.svg" alt="All" />
+                <img src="/imgs/icons/all.svg" alt="All" />
                 <span class="tag-label">All</span>
                 <span class="count">{notes.length}</span>
               </button>
               {tags.map(([tag, count], i) => (
                 <button type="button" class="tag-pill" data-tag={tag} tabindex={8 + i}>
-                  <img src={`/public/imgs/icons/${tag}.svg`} alt="" />
+                  <img src={`/imgs/icons/${tag}.svg`} alt="" />
                   <span class="tag-label">{tag}</span>
                   <span class="count">{count}</span>
                 </button>

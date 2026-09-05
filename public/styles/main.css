@@ -1354,6 +1354,10 @@
     }
 
     @media (min-width: 480px) and (max-width: 637px) {
+        body {
+            margin: 0 1.5rem;
+        }
+        
         main, header, footer, .note-content {
             max-width: 30em;
             margin: 0 auto;
@@ -1374,9 +1378,12 @@
     }
 
     @media (max-width: 479px) {
-
         :root {
             --header-columns: 1fr 0fr 1fr;
+        }
+        
+        body {
+            margin: 0 1.5rem;
         }
 
         main, header, footer, .note-content {

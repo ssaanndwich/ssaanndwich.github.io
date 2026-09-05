@@ -463,13 +463,12 @@
         gap: 0.15rem;
         padding: 0.05rem 0.5rem;
         background: transparent;
-        border: 1px solid var(--color-alu);
-        border-radius: 2rem;
-        cursor: pointer;
+        border: 1px solid rgb(144,144,144,0);
         text-decoration: none;
+        cursor: pointer;
         font-family: var(--font-family-body);
         font-size: var(--size-xs);
-        color: var(--color-text);
+        color: var(--color-ash);
     }
 
     .tag-pill img {
@@ -522,7 +521,6 @@
     .tag-pill.active:hover .count {
         color: var(--color-purple);
     }
-
 
     .tag-pill:hover {
         color: var(--color-purple);
@@ -593,6 +591,7 @@
 
     .light .tag-pill {
         color: var(--color-steel);
+        border: 1px solid rgb(144, 144, 144, 0);
         border-color: var(--color-alu);
     }
 
@@ -1357,7 +1356,7 @@
         body {
             margin: 0 1.5rem;
         }
-        
+
         main, header, footer, .note-content {
             max-width: 30em;
             margin: 0 auto;

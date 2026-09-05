@@ -592,7 +592,6 @@
     .light .tag-pill {
         color: var(--color-steel);
         border: 1px solid rgb(144, 144, 144, 0);
-        border-color: var(--color-alu);
     }
 
     .light .tag-pill img {

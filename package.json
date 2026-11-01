@@ -11,8 +11,9 @@
     "sync": "astro sync"
   },
   "dependencies": {
-    "@astrojs/mdx": "latest",
-    "astro": "latest",
-    "sharp": "^0.35.4"
+    "24": "^0.0.0",
+    "@astrojs/mdx": "^7.0.8",
+    "astro": "^7.4.4",
+    "sharp": "^0.35.5"
   }
 }

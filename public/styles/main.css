@@ -194,6 +194,20 @@
         color: var(--color-steel);
     }
 
+    .jumbotron .gos {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        text-decoration: none;
+        padding: 0.15rem 0.15rem;
+    }
+
+    .gos a {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
     .jumbotron h4 {
         color: var(--color-white);
         font-size: var(--size-sm);
